@@ -2,6 +2,7 @@ import { motion } from 'framer-motion';
 import { ArrowRight, CheckCircle2 } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
 import t from '../translations';
+import homeImg from '../assets/home.png';
 
 const serviceImages = [
   'https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?w=320&h=220&fit=crop&q=80',
@@ -50,7 +51,7 @@ export default function About() {
               style={{ borderRadius: '2.5rem', boxShadow: '0 25px 60px rgba(0,0,0,0.18)' }}
             >
               <img
-                src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=620&h=720&fit=crop&q=80"
+                src={homeImg}
                 alt="Agricultural Expertise"
                 className="w-full h-full object-cover"
                 loading="lazy"
