@@ -17,8 +17,8 @@ export default function About() {
   const tx = t[language].about;
 
   return (
-    <section id="about" className="py-28 bg-cream">
-      <div className="container-custom">
+    <section id="about" className="py-28 px-48 bg-cream">
+      <div className="relative h-[950px] flex items-center">
 
         <motion.div
           initial={{ opacity: 0, y: 24 }}
