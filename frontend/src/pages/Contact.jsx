@@ -74,15 +74,15 @@ export default function Contact() {
       </section>
 
       {/* ── Contact card ──────────────────────────── */}
-      <section style={{ backgroundColor: '#F7F3ED' }} className="pb-32">
-        <div className="container-custom">
+      <section style={{ backgroundColor: '#F7F3ED' }} className="pb-32 px-4 md:px-8 lg:px-12">
           <motion.div
             initial={{ opacity: 0, y: 44 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="bg-white rounded-3xl relative z-10 p-10"
+            className="bg-white rounded-3xl relative z-10"
             style={{ marginTop: '-80px', boxShadow: '0 24px 64px rgba(0,0,0,0.13)' }}
           >
+            <div className="container-custom">
             <div className="grid md:grid-cols-2 divide-y md:divide-y-0 md:divide-x divide-gray-100">
 
               {/* LEFT */}
@@ -201,8 +201,8 @@ export default function Contact() {
                 </form>
               </div>
             </div>
+            </div>
           </motion.div>
-        </div>
       </section>
 
       {/* ── Google Maps ──────────────────────────── */}
