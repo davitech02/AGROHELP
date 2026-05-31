@@ -7,7 +7,7 @@ import { motion } from 'framer-motion';
 export default function PageBanner({ label, title, subtitle, bg }) {
   return (
     <section
-      className="relative overflow-hidden pt-36 pb-60"
+      className="relative overflow-hidden pt-36 pb-80"
       style={{ backgroundColor: '#1B4332' }}
     >
       {/* Decorative glow blobs */}
@@ -59,7 +59,7 @@ export default function PageBanner({ label, title, subtitle, bg }) {
           </h1>
 
           {subtitle && (
-            <p className="text-lg leading-relaxed mx-auto max-w-xl"
+            <p className="text-lg leading-relaxed mx-auto max-w-xl text-center"
               style={{ color: 'rgba(255,255,255,0.68)' }}>
               {subtitle}
             </p>
