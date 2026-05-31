@@ -6,6 +6,7 @@ import Team from '../components/Team';
 import Footer from '../components/Footer';
 import { useLanguage } from '../context/LanguageContext';
 import t from '../translations';
+import missionImg from '../assets/mission.png';
 
 const vp = { once: true, amount: 0.15 };
 const valueIcons = [CheckCircle2, Target, Heart, Leaf];
@@ -23,13 +24,13 @@ export default function AboutPage() {
       />
 
       {/* ── Mission & Vision ─────────────────────── */}
-      <section className="py-28 bg-cream">
+      <section className="py-48 bg-cream">
         <div className="container-custom">
           <div className="grid lg:grid-cols-2 gap-14 xl:gap-20 items-center">
 
             <motion.div initial={{ opacity: 0, x: -40 }} whileInView={{ opacity: 1, x: 0 }} viewport={vp} transition={{ duration: 0.8 }} className="relative">
               <div className="overflow-hidden w-full h-[480px]" style={{ borderRadius: '2.5rem', boxShadow: '0 25px 60px rgba(0,0,0,0.16)' }}>
-                <img src="https://images.unsplash.com/photo-1500595046891-771f85f01f07?w=680&h=720&fit=crop&q=80" alt="AgroHelp mission" className="w-full h-full object-cover" />
+                <img src={missionImg} alt="AgroHelp mission" className="w-full h-full object-cover" />
                 <div className="absolute inset-0" style={{ background: 'linear-gradient(to top, rgba(27,67,50,.50) 0%, transparent 55%)' }} />
               </div>
               <div className="absolute -right-4 top-10 bg-white text-center px-6 py-5" style={{ borderRadius: '1.5rem', boxShadow: '0 12px 40px rgba(0,0,0,0.13)' }}>
