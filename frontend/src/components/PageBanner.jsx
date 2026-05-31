@@ -9,7 +9,7 @@ export default function PageBanner({ label, title, subtitle, bg }) {
     <>
       <section
         className="relative overflow-hidden pt-40"
-        style={{ backgroundColor: '#1B4332', paddingBottom: '26rem' }}
+        style={{ backgroundColor: '#1B4332', paddingBottom: '15rem' }}
       >
         {/* Decorative glow blobs */}
         <div
