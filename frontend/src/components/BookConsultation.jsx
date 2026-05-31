@@ -1,34 +1,14 @@
 import { motion } from 'framer-motion';
 import { Calendar, Clock, Zap, Award } from 'lucide-react';
+import { useLanguage } from '../context/LanguageContext';
+import t from '../translations';
 
-const appointments = [
-  {
-    icon: Clock,
-    title: '30-Minute Intro',
-    description: 'Quick overview of AgroHelp and how we can help your project',
-    price: 'Free',
-  },
-  {
-    icon: Zap,
-    title: '60-Minute Strategy',
-    description: 'Deep dive into your agricultural project or business',
-    price: '$200',
-  },
-  {
-    icon: Award,
-    title: 'Full-Day Workshop',
-    description: 'Comprehensive consulting and planning session',
-    price: '$1,500',
-  },
-  {
-    icon: Calendar,
-    title: 'Ongoing Partnership',
-    description: 'Long-term strategic advisory relationship',
-    price: 'Custom',
-  },
-];
+const appointmentIcons = [Clock, Zap, Award, Calendar];
 
 export default function BookConsultation() {
+  const { language } = useLanguage();
+  const tx = t[language].bookConsultation;
+
   return (
     <section id="booking" className="py-28 bg-cream">
       <div className="container-custom">
@@ -41,18 +21,14 @@ export default function BookConsultation() {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <span className="section-label">Book a Session</span>
-            <h2 className="section-title mt-1 mb-3">
-              Book Your Consultation
-            </h2>
-            <p className="section-subtitle mb-8">
-              Choose the appointment that best fits your agricultural project needs and goals.
-            </p>
+            <span className="section-label">{tx.label}</span>
+            <h2 className="section-title mt-1 mb-3">{tx.title}</h2>
+            <p className="section-subtitle mb-8">{tx.subtitle}</p>
 
-            {/* Appointment options */}
+            {/* Appointment cards */}
             <div className="grid grid-cols-2 gap-5 mb-12">
-              {appointments.map((apt, i) => {
-                const Icon = apt.icon;
+              {tx.appointments.map((apt, i) => {
+                const Icon = appointmentIcons[i];
                 return (
                   <motion.div
                     key={i}
@@ -63,10 +39,7 @@ export default function BookConsultation() {
                     className="group bg-white rounded-3xl p-5 shadow-card hover:shadow-card-hover border-2 border-transparent hover:border-orange-accent transition-all duration-300 cursor-pointer text-center"
                   >
                     <div className="w-10 h-10 bg-deep-green/8 rounded-2xl flex items-center justify-center mb-4 group-hover:bg-orange-accent/12 transition-colors mx-auto">
-                      <Icon
-                        size={20}
-                        className="text-deep-green group-hover:text-orange-accent transition-colors"
-                      />
+                      <Icon size={20} className="text-deep-green group-hover:text-orange-accent transition-colors" />
                     </div>
                     <h4 className="font-bold text-deep-green text-sm mb-1">{apt.title}</h4>
                     <p className="text-gray-400 text-xs mb-2 leading-snug">{apt.description}</p>
@@ -78,16 +51,16 @@ export default function BookConsultation() {
 
             {/* Quick inquiry form */}
             <div className="bg-white rounded-4xl p-6 shadow-card">
-              <h3 className="font-bold text-deep-green mb-4 text-base">Quick Inquiry</h3>
+              <h3 className="font-bold text-deep-green mb-4 text-base">{tx.formTitle}</h3>
               <div className="space-y-3">
                 <input
                   type="text"
-                  placeholder="Your full name"
+                  placeholder={tx.namePlaceholder}
                   className="w-full px-4 py-3 rounded-2xl border border-gray-200 focus:outline-none focus:border-deep-green text-sm bg-cream placeholder-gray-400 transition-colors"
                 />
                 <input
                   type="email"
-                  placeholder="Email address"
+                  placeholder={tx.emailPlaceholder}
                   className="w-full px-4 py-3 rounded-2xl border border-gray-200 focus:outline-none focus:border-deep-green text-sm bg-cream placeholder-gray-400 transition-colors"
                 />
                 <button
@@ -95,7 +68,7 @@ export default function BookConsultation() {
                   className="w-full btn-orange justify-center gap-2"
                 >
                   <Calendar size={18} />
-                  Book Now
+                  {tx.bookBtn}
                 </button>
               </div>
             </div>
@@ -118,7 +91,6 @@ export default function BookConsultation() {
               <div className="absolute inset-0 bg-gradient-to-t from-deep-green/45 to-transparent" />
             </div>
 
-            {/* Floating rating card */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -127,15 +99,12 @@ export default function BookConsultation() {
               className="absolute -left-8 top-12 bg-white rounded-xl p-4 shadow-card-hover min-w-[170px]"
             >
               <div className="flex items-center gap-0.5 mb-1.5">
-                {[...Array(5)].map((_, i) => (
-                  <span key={i} className="text-orange-accent">★</span>
-                ))}
+                {[...Array(5)].map((_, i) => <span key={i} className="text-orange-accent">★</span>)}
               </div>
-              <p className="font-bold text-deep-green text-sm">Trusted by 100+</p>
-              <p className="text-gray-400 text-sm">Agricultural Clients</p>
+              <p className="font-bold text-deep-green text-sm">{tx.ratingTitle}</p>
+              <p className="text-gray-400 text-sm">{tx.ratingDesc}</p>
             </motion.div>
 
-            {/* Floating availability card */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -143,9 +112,9 @@ export default function BookConsultation() {
               transition={{ delay: 0.75, duration: 0.6 }}
               className="absolute -right-6 bottom-20 bg-deep-green rounded-3xl px-5 py-4 shadow-green-glow"
             >
-              <p className="text-white font-bold text-sm">Next Available</p>
-              <p className="text-orange-accent text-lg font-extrabold">Tomorrow</p>
-              <p className="text-white/50 text-xs">9:00 AM slot open</p>
+              <p className="text-white font-bold text-sm">{tx.availTitle}</p>
+              <p className="text-orange-accent text-lg font-extrabold">{tx.availDay}</p>
+              <p className="text-white/50 text-xs">{tx.availTime}</p>
             </motion.div>
           </motion.div>
         </div>
