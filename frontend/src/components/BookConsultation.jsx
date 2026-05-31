@@ -50,7 +50,7 @@ export default function BookConsultation() {
             </p>
 
             {/* Appointment options */}
-            <div className="grid grid-cols-2 gap-5 mb-8">
+            <div className="grid grid-cols-2 gap-5 mb-12">
               {appointments.map((apt, i) => {
                 const Icon = apt.icon;
                 return (

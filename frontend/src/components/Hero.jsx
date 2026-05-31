@@ -60,8 +60,8 @@ export default function Hero() {
               transition={{ delay: 0.65, duration: 0.65 }}
               className="flex flex-col sm:flex-row gap-4"
             >
-              <a
-                href="#about"
+              <button
+                onClick={() => document.getElementById('booking')?.scrollIntoView({ behavior: 'smooth' })}
                 className="btn-orange group inline-flex items-center gap-2"
               >
                 Book a Consultation
@@ -69,7 +69,7 @@ export default function Hero() {
                   size={18}
                   className="group-hover:translate-x-1 transition-transform duration-200"
                 />
-              </a>
+              </button>
               <button className="btn-outline inline-flex items-center gap-2">
                 <Play size={16} className="fill-current" />
                 Watch Our Story
