@@ -8,7 +8,7 @@ export default function PageBanner({ label, title, subtitle, bg }) {
   return (
     <>
       <section
-        className="relative overflow-hidden pt-36 pb-60"
+        className="relative overflow-hidden pt-40 pb-80"
         style={{ backgroundColor: '#1B4332' }}
       >
         {/* Decorative glow blobs */}
