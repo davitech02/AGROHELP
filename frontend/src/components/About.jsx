@@ -17,9 +17,10 @@ export default function About() {
   const tx = t[language].about;
 
   return (
-    <section id="about" className="py-28 px-48 bg-cream">
-      <div className="relative h-[950px] flex items-center">
+    <section id="about" className="py-28 bg-cream">
+      <div className="container-custom">
 
+        {/* ── Heading ─────────────────────────────── */}
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -36,9 +37,10 @@ export default function About() {
           <p className="section-subtitle max-w-2xl mx-auto">{tx.subtitle}</p>
         </motion.div>
 
+        {/* ── Image + Content grid ─────────────────── */}
         <div className="grid lg:grid-cols-2 gap-14 xl:gap-20 items-center">
 
-          {/* ── Left: image ──────────────────────── */}
+          {/* Left: image */}
           <motion.div
             initial={{ opacity: 0, x: -40 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -91,7 +93,7 @@ export default function About() {
             </motion.div>
           </motion.div>
 
-          {/* ── Right: content ───────────────────── */}
+          {/* Right: content */}
           <motion.div
             initial={{ opacity: 0, x: 40 }}
             whileInView={{ opacity: 1, x: 0 }}
