@@ -2,6 +2,7 @@ import { motion } from 'framer-motion';
 import { Users, Target, Globe } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
 import t from '../translations';
+import supportImg from '../assets/support.jpeg';
 
 const featureIcons = [Users, Target, Globe];
 
@@ -39,7 +40,7 @@ export default function WhyAgroHelp() {
               <img src="https://images.unsplash.com/photo-1530836369250-ef72a3f5cda8?w=440&h=360&fit=crop&q=80" alt="Farming Practice" className="w-full h-full object-cover hover-scale" />
             </div>
             <div className="rounded-4xl overflow-hidden h-44 shadow-card">
-              <img src="https://images.unsplash.com/photo-1592991538534-00972b585a85?w=440&h=280&fit=crop&q=80" alt="Agricultural Training" className="w-full h-full object-cover hover-scale" />
+              <img src={supportImg} alt="Agricultural Training" className="w-full h-full object-cover hover-scale" />
             </div>
           </motion.div>
 
