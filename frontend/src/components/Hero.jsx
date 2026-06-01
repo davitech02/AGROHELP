@@ -8,11 +8,11 @@ export default function Hero() {
   const tx = t[language].hero;
 
   return (
-    <section className="relative min-h-screen bg-deep-green overflow-hidden">
+    <section className="relative min-h-[600px] bg-deep-green overflow-hidden">
       <div className="absolute top-0 right-0 w-[700px] h-[700px] rounded-full bg-forest-green/25 blur-3xl -translate-y-1/3 translate-x-1/3 pointer-events-none" />
       <div className="absolute bottom-0 left-0 w-[450px] h-[450px] rounded-full bg-forest-green/15 blur-3xl translate-y-1/3 -translate-x-1/3 pointer-events-none" />
 
-      <div className="relative container-custom min-h-screen flex items-center pt-24 pb-20">
+      <div className="relative container-custom min-h-[600px] flex items-center pt-24 pb-20">
         <div className="grid lg:grid-cols-2 gap-10 xl:gap-16 items-center w-full">
 
           {/* ── Left Content ─────────────────────── */}
