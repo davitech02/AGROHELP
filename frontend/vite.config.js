@@ -15,7 +15,7 @@ function emailApiPlugin() {
       // Load .env from project root every time the server starts
       _require('dotenv').config({ path: resolve(__dirname, '../.env') })
 
-      const { EMAIL_HOST, EMAIL_PORT, EMAIL_SECURE, EMAIL_USER, EMAIL_PASS } = process.env
+      const { EMAIL_HOST, EMAIL_PORT, EMAIL_SECURE, EMAIL_USER, EMAIL_PASS, EMAIL_TO } = process.env
       const port   = Number(EMAIL_PORT) || 465
       const secure = EMAIL_SECURE === 'true'
 
@@ -26,6 +26,7 @@ function emailApiPlugin() {
       console.log('  SECURE :', secure)
       console.log('  USER   :', EMAIL_USER)
       console.log('  PASS   :', EMAIL_PASS ? '***set***' : '!!! NOT SET !!!')
+      console.log('  TO     :', EMAIL_TO || EMAIL_USER)
 
       const nodemailer = _require('nodemailer')
 
@@ -70,7 +71,7 @@ function emailApiPlugin() {
 
             const mailOptions = {
               from:    `"AgroHelp Contact" <${EMAIL_USER}>`,
-              to:      EMAIL_USER,
+              to:      EMAIL_TO || EMAIL_USER,
               replyTo: email,
               subject: `[Contact] ${subject}`,
               html: `

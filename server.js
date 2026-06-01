@@ -59,7 +59,7 @@ app.post('/api/send-email', async (req, res) => {
   try {
     await transporter.sendMail({
       from: `"AgroHelp Contact" <${process.env.EMAIL_USER}>`,
-      to: process.env.EMAIL_USER,
+      to: process.env.EMAIL_TO || process.env.EMAIL_USER,
       replyTo: email,
       subject: `[Contact] ${subject}`,
       html,
