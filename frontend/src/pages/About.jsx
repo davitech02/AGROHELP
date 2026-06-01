@@ -73,7 +73,7 @@ export default function AboutPage() {
           <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={vp} transition={{ duration: 0.6 }} className="text-center mb-16">
             <span className="section-label">{tx.valuesLabel}</span>
             <h2 className="section-title">{tx.valuesTitle}</h2>
-            <p className="section-subtitle max-w-2xl mx-auto">{tx.valuesSubtitle}</p>
+            <p className="section-subtitle">{tx.valuesSubtitle}</p>
           </motion.div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">

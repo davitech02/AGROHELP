@@ -28,7 +28,7 @@ export default function PlatformPage() {
           <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={vp} transition={{ duration: 0.6 }} className="text-center mb-16">
             <span className="section-label">{tx.pillarsLabel}</span>
             <h2 className="section-title">{tx.pillarsTitle}</h2>
-            <p className="section-subtitle max-w-2xl mx-auto">{tx.pillarsSubtitle}</p>
+            <p className="section-subtitle">{tx.pillarsSubtitle}</p>
           </motion.div>
 
           <div className="grid lg:grid-cols-3 gap-8">
@@ -55,7 +55,7 @@ export default function PlatformPage() {
           <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={vp} transition={{ duration: 0.6 }} className="text-center mb-16">
             <span className="section-label">{tx.processLabel}</span>
             <h2 className="section-title">{tx.processTitle}</h2>
-            <p className="section-subtitle max-w-xl mx-auto">{tx.processSubtitle}</p>
+            <p className="section-subtitle">{tx.processSubtitle}</p>
           </motion.div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">

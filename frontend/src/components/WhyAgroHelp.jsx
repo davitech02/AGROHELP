@@ -23,7 +23,7 @@ export default function WhyAgroHelp() {
         >
           <span className="section-label">{tx.label}</span>
           <h2 className="section-title">{tx.title}</h2>
-          <p className="section-subtitle max-w-xl mx-auto">{tx.subtitle}</p>
+          <p className="section-subtitle">{tx.subtitle}</p>
         </motion.div>
 
         <div className="grid lg:grid-cols-3 gap-8 items-start">

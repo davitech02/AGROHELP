@@ -34,7 +34,7 @@ export default function About() {
               <span key={i}>{line}{i < tx.title.split('\n').length - 1 && <br />}</span>
             ))}
           </h2>
-          <p className="section-subtitle max-w-2xl mx-auto">{tx.subtitle}</p>
+          <p className="section-subtitle">{tx.subtitle}</p>
         </motion.div>
 
         {/* ── Image + Content grid ─────────────────── */}

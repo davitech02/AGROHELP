@@ -43,7 +43,7 @@ export default function Services() {
         >
           <span className="section-label">{tx.label}</span>
           <h2 className="section-title">{tx.title}</h2>
-          <p className="section-subtitle max-w-2xl mx-auto">{tx.subtitle}</p>
+          <p className="section-subtitle">{tx.subtitle}</p>
         </motion.div>
 
         <motion.div
