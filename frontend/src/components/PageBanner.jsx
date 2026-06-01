@@ -7,8 +7,8 @@ import { motion } from 'framer-motion';
 export default function PageBanner({ label, title, subtitle, bg }) {
   return (
     <section
-      className="relative overflow-hidden pt-40"
-      style={{ backgroundColor: '#1B4332', paddingBottom: '15rem' }}
+      className="relative overflow-hidden flex flex-col items-center justify-center"
+      style={{ backgroundColor: '#1B4332', minHeight: '28rem', paddingTop: '7rem', paddingBottom: '9rem' }}
     >
       {/* Decorative glow blobs */}
       <div
