@@ -22,6 +22,7 @@ export default function Contact() {
 
   const [formData, setFormData] = useState({ name: '', company: '', phone: '', email: '', subject: '', message: '' });
   const [submitted, setSubmitted] = useState(false);
+  const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
 
   const handleChange = (e) => {
@@ -32,15 +33,15 @@ export default function Contact() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
+    setError('');
     try {
-      const apiUrl = import.meta.env.VITE_API_URL || 'http://localhost:5000';
-      await axios.post(`${apiUrl}/api/contact`, formData);
+      await axios.post('/api/send-email', formData);
       setSubmitted(true);
       setFormData({ name: '', company: '', phone: '', email: '', subject: '', message: '' });
-      setTimeout(() => setSubmitted(false), 5000);
-    } catch (error) {
-      console.error('Error submitting form:', error);
-      alert(tx.errorMsg);
+      setTimeout(() => setSubmitted(false), 8000);
+    } catch (err) {
+      console.error('Error submitting form:', err);
+      setError('Something went wrong. Please try again or contact us directly at info@agrohelp.farm');
     } finally {
       setLoading(false);
     }
@@ -147,7 +148,14 @@ export default function Contact() {
                 {submitted && (
                   <motion.div initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }}
                     className="mb-6 p-5 bg-green-50 border border-green-200 text-green-700 rounded-2xl text-sm font-medium">
-                    {tx.successMsg}
+                    Your message has been sent successfully! We will get back to you within 24 hours.
+                  </motion.div>
+                )}
+
+                {error && (
+                  <motion.div initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }}
+                    className="mb-6 p-5 bg-red-50 border border-red-200 text-red-700 rounded-2xl text-sm font-medium">
+                    {error}
                   </motion.div>
                 )}
 
