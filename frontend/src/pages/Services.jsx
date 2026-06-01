@@ -6,17 +6,23 @@ import BookConsultation from '../components/BookConsultation';
 import Footer from '../components/Footer';
 import { useLanguage } from '../context/LanguageContext';
 import t from '../translations';
+import svc1 from '../assets/service1.jpeg';
+import svc2 from '../assets/service2.jpeg';
+import svc4 from '../assets/service4.jpeg';
+import svc5 from '../assets/service5.jpg';
+import svc6 from '../assets/service6.jpg';
+import livestock from '../assets/livestocks.jpeg';
 
 const vp = { once: true, amount: 0.12 };
 
 const servicesMeta = [
-  { icon: Lightbulb,  image: 'https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?w=640&h=420&fit=crop&q=80', tagColor: '#1B4332' },
-  { icon: LinkIcon,   image: 'https://images.unsplash.com/photo-1464226184884-fa280b87c399?w=640&h=420&fit=crop&q=80', tagColor: '#2D6A4F' },
-  { icon: Package,    image: 'https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=640&h=420&fit=crop&q=80', tagColor: '#E07B39' },
-  { icon: Zap,        image: 'https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=640&h=420&fit=crop&q=80', tagColor: '#1B4332' },
-  { icon: BookOpen,   image: 'https://images.unsplash.com/photo-1592991538534-00972b585a85?w=640&h=420&fit=crop&q=80', tagColor: '#2D6A4F' },
-  { icon: CheckCircle,image: 'https://images.unsplash.com/photo-1560493676-04071c5f467b?w=640&h=420&fit=crop&q=80', tagColor: '#E07B39' },
-  { icon: Beef,       image: 'https://images.unsplash.com/photo-1516467508483-a7212febe31a?w=640&h=420&fit=crop&q=80', tagColor: '#2D6A4F' },
+  { icon: Lightbulb,   image: svc1,                                                                                       tagColor: '#1B4332' },
+  { icon: LinkIcon,    image: svc2,                                                                                       tagColor: '#2D6A4F' },
+  { icon: Package,     image: 'https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=640&h=420&fit=crop&q=80', tagColor: '#E07B39' },
+  { icon: Zap,         image: svc4,                                                                                       tagColor: '#1B4332' },
+  { icon: BookOpen,    image: svc5,                                                                                       tagColor: '#2D6A4F' },
+  { icon: CheckCircle, image: svc6,                                                                                       tagColor: '#E07B39' },
+  { icon: Beef,        image: livestock,                                                                                   tagColor: '#2D6A4F' },
 ];
 
 export default function ServicesPage() {

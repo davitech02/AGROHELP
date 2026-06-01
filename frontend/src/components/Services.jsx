@@ -2,14 +2,19 @@ import { motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
 import t from '../translations';
+import svc1 from '../assets/service1.jpeg';
+import svc2 from '../assets/service2.jpeg';
+import svc4 from '../assets/service4.jpeg';
+import svc5 from '../assets/service5.jpg';
+import svc6 from '../assets/service6.jpg';
 
 const servicesMeta = [
-  { image: 'https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?w=520&h=380&fit=crop&q=80', tagColor: 'bg-deep-green'    },
-  { image: 'https://images.unsplash.com/photo-1464226184884-fa280b87c399?w=520&h=380&fit=crop&q=80', tagColor: 'bg-forest-green'  },
+  { image: svc1,                                                                                        tagColor: 'bg-deep-green'    },
+  { image: svc2,                                                                                        tagColor: 'bg-forest-green'  },
   { image: 'https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=520&h=380&fit=crop&q=80', tagColor: 'bg-orange-accent' },
-  { image: 'https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=520&h=380&fit=crop&q=80', tagColor: 'bg-deep-green'    },
-  { image: 'https://images.unsplash.com/photo-1592991538534-00972b585a85?w=520&h=380&fit=crop&q=80', tagColor: 'bg-forest-green'  },
-  { image: 'https://images.unsplash.com/photo-1560493676-04071c5f467b?w=520&h=380&fit=crop&q=80', tagColor: 'bg-orange-accent' },
+  { image: svc4,                                                                                        tagColor: 'bg-deep-green'    },
+  { image: svc5,                                                                                        tagColor: 'bg-forest-green'  },
+  { image: svc6,                                                                                        tagColor: 'bg-orange-accent' },
 ];
 
 const containerVariants = {
