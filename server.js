@@ -9,14 +9,22 @@ app.use(cors());
 app.use(express.json());
 
 const transporter = nodemailer.createTransport({
-  host: process.env.EMAIL_HOST,
-  port: parseInt(process.env.EMAIL_PORT, 10),
-  secure: false,
+  host:   process.env.EMAIL_HOST,
+  port:   Number(process.env.EMAIL_PORT) || 465,
+  secure: process.env.EMAIL_SECURE === 'true',
   auth: {
     user: process.env.EMAIL_USER,
     pass: process.env.EMAIL_PASS,
   },
   tls: { rejectUnauthorized: false },
+});
+
+transporter.verify((error) => {
+  if (error) {
+    console.error('[email-api] ❌ SMTP Connection Error:', error.message);
+  } else {
+    console.log('[email-api] ✅ SMTP Server is ready to send emails');
+  }
 });
 
 app.post('/api/send-email', async (req, res) => {

@@ -15,21 +15,24 @@ function emailApiPlugin() {
       // Load .env from project root every time the server starts
       _require('dotenv').config({ path: resolve(__dirname, '../.env') })
 
-      const { EMAIL_HOST, EMAIL_PORT, EMAIL_USER, EMAIL_PASS } = process.env
+      const { EMAIL_HOST, EMAIL_PORT, EMAIL_SECURE, EMAIL_USER, EMAIL_PASS } = process.env
+      const port   = Number(EMAIL_PORT) || 465
+      const secure = EMAIL_SECURE === 'true'
 
       // Confirm env vars are loaded
       console.log('\n[email-api] SMTP config loaded:')
-      console.log('  HOST :', EMAIL_HOST)
-      console.log('  PORT :', EMAIL_PORT)
-      console.log('  USER :', EMAIL_USER)
-      console.log('  PASS :', EMAIL_PASS ? '***set***' : '!!! NOT SET !!!')
+      console.log('  HOST   :', EMAIL_HOST)
+      console.log('  PORT   :', port)
+      console.log('  SECURE :', secure)
+      console.log('  USER   :', EMAIL_USER)
+      console.log('  PASS   :', EMAIL_PASS ? '***set***' : '!!! NOT SET !!!')
 
       const nodemailer = _require('nodemailer')
 
       const transporter = nodemailer.createTransport({
         host:   EMAIL_HOST,
-        port:   Number(EMAIL_PORT) || 587,
-        secure: false,
+        port,
+        secure,
         auth: {
           user: EMAIL_USER,
           pass: EMAIL_PASS,
