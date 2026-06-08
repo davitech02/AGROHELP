@@ -24,7 +24,7 @@ export default function WhoWeServe() {
   const tx = t[language].whoWeServe;
 
   return (
-    <section id="partners" className="py-28 bg-white">
+    <section id="partners" className="py-14 md:py-28 bg-white">
       <div className="container-custom">
 
         <motion.div
@@ -55,7 +55,7 @@ export default function WhoWeServe() {
             >
               <img src={clientImages[i]} alt={client.label} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
               <div className="absolute inset-0 bg-gradient-to-t from-deep-green/90 via-deep-green/30 to-transparent" />
-              <div className="absolute bottom-0 left-0 right-0 p-4 text-center">
+              <div className="absolute bottom-0 left-0 right-0 p-5 text-center">
                 <h3 className="text-white font-bold text-base mb-1">{client.label}</h3>
                 <p className="text-white/0 group-hover:text-white/80 text-xs leading-relaxed transition-all duration-400 max-h-0 group-hover:max-h-24 overflow-hidden">
                   {client.description}

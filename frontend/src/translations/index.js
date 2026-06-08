@@ -370,24 +370,21 @@ const t = {
   fr: {
     nav: {
       links: [
-        { label: 'Accueil',     href: '/' },
-        { label: 'À propos',    href: '/about' },
-        { label: 'Services',    href: '/services' },
-        { label: 'Plateforme',  href: '/platform' },
-        { label: 'Partenaires', href: '/partners' },
-        { label: 'Blog',        href: '/blog' },
-        { label: 'Contact',     href: '/contact' },
+        { label: 'Accueil',        href: '/'            },
+        { label: 'Nos offres',     href: '/services'    },
+        { label: 'Témoignages',    href: '#temoignages' },
+        { label: 'Nous contacter', href: '/contact'     },
       ],
-      cta: 'Nous Contacter',
+      cta: 'Prendre Rendez-vous',
     },
 
     hero: {
-      badge:    'Excellence Agricole Africaine',
-      h1a:      'De la Stratégie',
-      h1b:      'au Terrain.',
-      subtitle: "Nous accompagnons les projets agricoles à chaque étape de leur développement. Transformer l'agriculture africaine par un conseil stratégique expert.",
+      badge:    'Cabinet de Conseil en Agribusiness',
+      h1a:      'Agrohelp',
+      h1b:      'Group',
+      subtitle: 'De la stratégie au terrain, nous accompagnons les projets agricoles à chaque étape de leur développement.',
       cta1:     'Prendre Rendez-vous',
-      cta2:     'Notre Histoire',
+      cta2:     'En savoir plus',
       stats: [
         { num: '100+', lbl: 'Projets'     },
         { num: '50+',  lbl: 'Partenaires' },
@@ -419,17 +416,17 @@ const t = {
     },
 
     servicesHome: {
-      label:     'Ce Que Nous Faisons',
+      label:     'Nos Offres',
       title:     'Nos Services',
-      subtitle:  'Des solutions de conseil agricole complètes adaptées à vos besoins spécifiques',
+      subtitle:  'Cliquez sur chaque service pour découvrir son contenu en détail.',
       learnMore: 'En savoir plus',
       items: [
-        { title: 'Conseil Stratégique',                    description: "Des stratégies sur mesure pour votre entreprise agricole — de l'analyse de marché à la mise en œuvre complète.",              tag: 'Stratégie'        },
-        { title: 'Développement de la Chaîne de Valeur',   description: 'Construire des chaînes de valeur efficaces et rentables qui connectent directement les agriculteurs aux marchés.',            tag: 'Croissance'       },
-        { title: 'Approvisionnement en Intrants',          description: "Approvisionnement et distribution fiables d'intrants agricoles de qualité aux petits exploitants et agro-entreprises.",      tag: 'Approvisionnement'},
-        { title: 'Solutions Agritech',                     description: 'Exploiter la technologie pour moderniser les opérations agricoles et améliorer substantiellement les rendements.',             tag: 'Technologie'      },
-        { title: 'Formation & Renforcement des Capacités', description: 'Des programmes de formation complets pour les agriculteurs et tous les acteurs de la chaîne de valeur.',                      tag: 'Formation'        },
-        { title: 'Conformité QHSE',                        description: "Garantir les normes de qualité, de santé, de sécurité et d'environnement dans toutes vos opérations.",                       tag: 'Normes'           },
+        { title: 'Conseil stratégique & agribusiness',              description: "Accompagnement stratégique pour structurer, développer et financer vos projets agricoles.",                                            tag: 'Stratégie'   },
+        { title: 'Développement des filières agricoles',            description: "Construction de filières agricoles efficaces et rentables, des intrants jusqu'aux marchés finaux.",                                     tag: 'Filières'    },
+        { title: 'Commercialisation des intrants agricoles',        description: "Approvisionnement et distribution de qualité en semences, engrais et équipements agricoles.",                                           tag: 'Intrants'    },
+        { title: 'Innovation & agritech',                           description: "Intégration des solutions technologiques pour moderniser et optimiser vos opérations agricoles.",                                        tag: 'Technologie' },
+        { title: 'Formation & renforcement de capacités',           description: "Programmes de formation complets pour les agriculteurs et tous les acteurs de la chaîne de valeur.",                                    tag: 'Formation'   },
+        { title: 'QHSE – Qualité, Hygiène, Sécurité & Environnement', description: "Accompagnement vers la conformité aux normes internationales de qualité, hygiène, sécurité et environnement.", tag: 'QHSE'        },
       ],
     },
 
@@ -481,39 +478,59 @@ const t = {
     },
 
     team: {
-      label:    'Les Experts',
-      title:    'Notre Équipe',
-      subtitle: "Découvrez les experts dévoués qui conduisent la transformation agricole à travers l'Afrique",
-      roles: [
-        'Fondateur & Stratège Principal',
-        'Directrice de la Chaîne de Valeur',
-        'Responsable Agritech',
-        'Investissement & Finance',
-        'Formation & Renforcement des Capacités',
-        'Conformité & Opérations',
+      label:    'Notre Équipe',
+      title:    'Des Experts à Votre Service',
+      subtitle: "Notre équipe réunit des experts passionnés et expérimentés, combinant des compétences en agribusiness, agronomie, qualité, sécurité, environnement et gestion de projets. Grâce à des parcours académiques reconnus en France et à une solide expérience de terrain, nous accompagnons nos clients avec rigueur, innovation et engagement vers des résultats durables.",
+      members: [
+        {
+          name: 'Eric',
+          role: 'CEO & Expert en Agribusiness',
+          bio:  "Ingénieur en Agribusiness et titulaire d'un Master en Management et Administration des Entreprises en France. Fort de plus de 10 ans d'expérience, il accompagne le développement, la structuration et la réussite de projets agricoles à fort impact.",
+        },
+        {
+          name: 'Ibrahim',
+          role: 'Expert Consultant en Qualité, Sécurité et Environnement',
+          bio:  "Titulaire d'un Master en Qualité, Sécurité et Environnement dans les Industries et Services obtenu en France. Il dispose de plus de 6 ans d'expérience dans l'accompagnement des organisations vers l'excellence opérationnelle, la conformité et l'amélioration continue.",
+        },
+        {
+          name: 'Stéphane',
+          role: 'Expert Consultant en Agronomie',
+          bio:  "Ingénieur agronome diplômé d'AgroSup Dijon (France). Avec plus de 6 ans d'expérience, il apporte son expertise technique dans la conception, l'optimisation et le suivi de projets agricoles innovants et durables.",
+        },
+        {
+          name: 'Suzy',
+          role: 'Assistante Administrative & Gestionnaire de Projets',
+          bio:  "Professionnelle expérimentée avec plus de 10 ans d'expérience dans la gestion administrative et le suivi de projets. Elle assure la coordination, l'organisation et le bon déroulement des opérations au quotidien.",
+        },
       ],
     },
 
     footer: {
-      brandDesc:       "Transformer l'agriculture africaine par le conseil stratégique. Construire des systèmes alimentaires durables et renforcer les chaînes de valeur à travers le continent.",
-      servicesHeading: 'Services',
-      companyHeading:  'Entreprise',
+      brandDesc:       "Cabinet de conseil stratégique dédié à la transformation de l'agriculture africaine. Nous faisons le lien entre la stratégie et le terrain pour des projets performants et durables.",
+      servicesHeading: 'Nos Offres',
+      companyHeading:  'Navigation',
       contactHeading:  'Coordonnées',
       newsletterLabel: 'Restez Informés',
       emailPlaceholder:'Votre e-mail',
-      serviceLinks: ['Conseil Stratégique', 'Développement Chaîne de Valeur', 'Solutions Agritech', 'Programmes de Formation', 'Conformité QHSE'],
-      companyLinks: [
-        { label: 'À propos',      href: '#about' },
-        { label: 'Notre Équipe',  href: '#team'  },
-        { label: 'Blog',          href: '#'      },
-        { label: 'Carrières',     href: '#'      },
-        { label: 'Partenaires',   href: '#'      },
+      serviceLinks: [
+        'Conseil stratégique & agribusiness',
+        'Développement des filières agricoles',
+        'Innovation & agritech',
+        'Formation & renforcement de capacités',
+        'QHSE – Qualité, Hygiène, Sécurité & Environnement',
       ],
+      companyLinks: [
+        { label: 'Accueil',        href: '/'         },
+        { label: 'Nos offres',     href: '/services' },
+        { label: 'Témoignages',    href: '/#temoignages' },
+        { label: 'Nous contacter', href: '/contact'  },
+      ],
+      locations: ['Douala — Cameroun', 'Dijon — France'],
       whatsapp:      'Écrivez-nous sur WhatsApp',
       copyright:     '© 2026 AgroHelp Group. Tous droits réservés.',
       privacyPolicy: 'Politique de Confidentialité',
       termsOfService:"Conditions d'Utilisation",
-      contactUs:     'Contactez-Nous',
+      contactUs:     'Nous contacter',
     },
 
     // ── Pages ──────────────────────────────────────────────────────────

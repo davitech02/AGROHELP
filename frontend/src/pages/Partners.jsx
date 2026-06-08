@@ -29,7 +29,7 @@ export default function PartnersPage() {
       />
 
       {/* ── Partner segments ─────────────────────── */}
-      <section className="py-28 bg-cream">
+      <section className="py-14 md:py-28 bg-cream">
         <div className="container-custom space-y-24">
           {tx.segments.map((seg, i) => {
             const { icon: Icon, image, accent } = segmentMeta[i];
@@ -74,7 +74,7 @@ export default function PartnersPage() {
       </section>
 
       {/* ── CTA ─────────────────────────────────── */}
-      <section className="py-28 bg-white">
+      <section className="py-14 md:py-28 bg-white">
         <div className="container-custom">
           <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={vp} transition={{ duration: 0.6 }} className="text-center max-w-2xl mx-auto">
             <span className="section-label">{tx.ctaLabel}</span>

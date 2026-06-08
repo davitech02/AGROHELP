@@ -23,7 +23,7 @@ export default function PlatformPage() {
       />
 
       {/* ── Core Pillars ─────────────────────────── */}
-      <section className="py-28 bg-cream">
+      <section className="py-14 md:py-28 bg-cream">
         <div className="container-custom">
           <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={vp} transition={{ duration: 0.6 }} className="text-center mb-16">
             <span className="section-label">{tx.pillarsLabel}</span>
@@ -36,7 +36,7 @@ export default function PlatformPage() {
               const Icon = pillarIcons[i];
               return (
                 <motion.div key={i} initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={vp} transition={{ delay: i * 0.12, duration: 0.6 }}
-                  className="bg-white p-7 rounded-4xl text-center" style={{ boxShadow: '0 4px 24px rgba(0,0,0,0.07)' }}>
+                  className="bg-white p-8 rounded-4xl text-center" style={{ boxShadow: '0 4px 24px rgba(0,0,0,0.07)' }}>
                   <div className="w-14 h-14 rounded-2xl flex items-center justify-center mb-5 mx-auto" style={{ background: 'rgba(27,67,50,0.08)' }}>
                     <Icon size={26} style={{ color: '#1B4332' }} />
                   </div>
@@ -50,7 +50,7 @@ export default function PlatformPage() {
       </section>
 
       {/* ── Process Steps ────────────────────────── */}
-      <section className="py-28 bg-white">
+      <section className="py-14 md:py-28 bg-white">
         <div className="container-custom">
           <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={vp} transition={{ duration: 0.6 }} className="text-center mb-16">
             <span className="section-label">{tx.processLabel}</span>
@@ -61,7 +61,7 @@ export default function PlatformPage() {
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {tx.process.map((step, i) => (
               <motion.div key={i} initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={vp} transition={{ delay: i * 0.1, duration: 0.55 }}
-                className="relative p-6 bg-cream rounded-3xl text-center">
+                className="relative p-8 bg-cream rounded-3xl text-center">
                 <span className="text-5xl font-black mb-4 block" style={{ color: 'rgba(27,67,50,0.08)' }}>{step.step}</span>
                 <h3 className="font-bold text-base mb-2" style={{ color: '#1B4332' }}>{step.title}</h3>
                 <p className="text-gray-500 text-sm leading-relaxed">{step.desc}</p>
@@ -75,7 +75,7 @@ export default function PlatformPage() {
       </section>
 
       {/* ── Tools ───────────────────────────────── */}
-      <section className="py-28 bg-cream">
+      <section className="py-14 md:py-28 bg-cream">
         <div className="container-custom">
           <div className="grid lg:grid-cols-2 gap-14 items-center">
             <motion.div initial={{ opacity: 0, x: -40 }} whileInView={{ opacity: 1, x: 0 }} viewport={vp} transition={{ duration: 0.8 }}>
@@ -87,7 +87,7 @@ export default function PlatformPage() {
                   const Icon = toolIcons[i];
                   return (
                     <motion.div key={i} initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }} viewport={vp} transition={{ delay: i * 0.1, duration: 0.5 }}
-                      className="flex gap-5 p-5 bg-white rounded-2xl" style={{ boxShadow: '0 2px 12px rgba(0,0,0,0.05)' }}>
+                      className="flex flex-col items-center text-center gap-3 p-8 bg-white rounded-2xl" style={{ boxShadow: '0 2px 12px rgba(0,0,0,0.05)' }}>
                       <div className="w-10 h-10 rounded-xl flex items-center justify-center shrink-0" style={{ background: 'rgba(224,123,57,0.10)' }}>
                         <Icon size={18} style={{ color: '#E07B39' }} />
                       </div>
@@ -105,7 +105,7 @@ export default function PlatformPage() {
               <div className="overflow-hidden h-[500px]" style={{ borderRadius: '2.5rem', boxShadow: '0 25px 60px rgba(0,0,0,0.15)' }}>
                 <img src="https://images.unsplash.com/photo-1488459716781-31db52582fe9?w=560&h=700&fit=crop&q=80" alt="Platform capabilities" className="w-full h-full object-cover" />
               </div>
-              <div className="absolute bottom-8 left-6 right-6 bg-white p-4 rounded-2xl" style={{ boxShadow: '0 8px 30px rgba(0,0,0,0.12)' }}>
+              <div className="absolute bottom-8 left-6 right-6 bg-white p-7 rounded-2xl text-center" style={{ boxShadow: '0 8px 30px rgba(0,0,0,0.12)' }}>
                 <p className="font-bold text-sm" style={{ color: '#1B4332' }}>{tx.trustedBadge}</p>
                 <p className="text-xs text-gray-500 mt-0.5">{tx.trustedDesc}</p>
               </div>
@@ -115,7 +115,7 @@ export default function PlatformPage() {
       </section>
 
       {/* ── CTA ─────────────────────────────────── */}
-      <section className="py-28 bg-white">
+      <section className="py-14 md:py-28 bg-white">
         <div className="container-custom text-center max-w-2xl mx-auto">
           <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={vp} transition={{ duration: 0.6 }}>
             <span className="section-label">{tx.ctaLabel}</span>

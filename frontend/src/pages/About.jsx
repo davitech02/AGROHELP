@@ -24,7 +24,7 @@ export default function AboutPage() {
       />
 
       {/* ── Mission & Vision ─────────────────────── */}
-      <section className="py-48 bg-cream">
+      <section className="py-20 md:py-32 bg-cream">
         <div className="container-custom">
           <div className="grid lg:grid-cols-2 gap-14 xl:gap-20 items-center">
 
@@ -44,19 +44,19 @@ export default function AboutPage() {
               <h2 className="section-title">{tx.mvTitle}</h2>
 
               <div className="space-y-5 mb-8">
-                <div className="p-6 bg-white rounded-3xl" style={{ boxShadow: '0 4px 24px rgba(0,0,0,0.07)' }}>
+                <div className="p-8 bg-white rounded-3xl text-center" style={{ boxShadow: '0 4px 24px rgba(0,0,0,0.07)' }}>
                   <h3 className="font-bold mb-2.5" style={{ color: '#1B4332' }}>{tx.missionLabel}</h3>
                   <p className="text-gray-500 text-sm leading-relaxed">{tx.missionText}</p>
                 </div>
-                <div className="p-6 bg-white rounded-3xl" style={{ boxShadow: '0 4px 24px rgba(0,0,0,0.07)' }}>
+                <div className="p-8 bg-white rounded-3xl text-center" style={{ boxShadow: '0 4px 24px rgba(0,0,0,0.07)' }}>
                   <h3 className="font-bold mb-2.5" style={{ color: '#1B4332' }}>{tx.visionLabel}</h3>
                   <p className="text-gray-500 text-sm leading-relaxed">{tx.visionText}</p>
                 </div>
               </div>
 
-              <div className="grid grid-cols-4 gap-3">
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
                 {tx.stats.map((s, i) => (
-                  <div key={i} className="text-center p-3 bg-deep-green/5 rounded-2xl">
+                  <div key={i} className="text-center p-6 bg-deep-green/5 rounded-2xl">
                     <div className="text-xl font-extrabold" style={{ color: '#1B4332' }}>{s.number}</div>
                     <div className="text-xs text-gray-500 mt-0.5 leading-tight">{s.label}</div>
                   </div>
@@ -68,7 +68,7 @@ export default function AboutPage() {
       </section>
 
       {/* ── Values ──────────────────────────────── */}
-      <section className="py-28 bg-white">
+      <section className="py-14 md:py-28 bg-white">
         <div className="container-custom">
           <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={vp} transition={{ duration: 0.6 }} className="text-center mb-16">
             <span className="section-label">{tx.valuesLabel}</span>
@@ -86,7 +86,7 @@ export default function AboutPage() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={vp}
                   transition={{ delay: i * 0.1, duration: 0.55 }}
-                  className="group p-6 bg-cream rounded-3xl hover:bg-white transition-all duration-300 text-center"
+                  className="group p-8 bg-cream rounded-3xl hover:bg-white transition-all duration-300 text-center"
                   style={{ boxShadow: '0 2px 12px rgba(0,0,0,0.05)' }}
                 >
                   <div className="w-12 h-12 flex items-center justify-center rounded-2xl mb-4 mx-auto" style={{ background: 'rgba(224,123,57,0.12)' }}>
@@ -104,7 +104,7 @@ export default function AboutPage() {
       <Team />
 
       {/* ── CTA ─────────────────────────────────── */}
-      <section className="py-28 bg-cream">
+      <section className="py-14 md:py-28 bg-cream">
         <div className="container-custom">
           <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={vp} transition={{ duration: 0.6 }} className="text-center max-w-2xl mx-auto">
             <span className="section-label">{tx.ctaLabel}</span>

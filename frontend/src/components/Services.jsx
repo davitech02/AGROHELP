@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import { useLanguage } from '../context/LanguageContext';
 import t from '../translations';
 import svc1 from '../assets/service1.jpeg';
@@ -31,7 +32,7 @@ export default function Services() {
   const tx = t[language].servicesHome;
 
   return (
-    <section id="services" className="py-28 bg-white">
+    <section id="services" className="py-16 md:py-24 bg-cream">
       <div className="container-custom">
 
         <motion.div
@@ -54,21 +55,30 @@ export default function Services() {
           className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 xl:gap-8"
         >
           {tx.items.map((svc, i) => (
-            <motion.div key={i} variants={itemVariants} className="group card-base cursor-pointer">
-              <div className="relative h-52 overflow-hidden">
-                <img src={servicesMeta[i].image} alt={svc.title} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
-                <span className={`absolute top-4 left-4 ${servicesMeta[i].tagColor} text-white text-xs font-bold px-3 py-1 rounded-full shadow`}>
-                  {svc.tag}
-                </span>
-              </div>
-              <div className="p-6 text-center">
-                <h3 className="text-lg font-bold text-deep-green mb-3">{svc.title}</h3>
-                <p className="text-gray-500 text-sm leading-relaxed mb-5">{svc.description}</p>
-                <div className="flex items-center justify-center text-orange-accent font-semibold text-sm group/link">
-                  {tx.learnMore}
-                  <ArrowRight size={15} className="ml-1.5 group-hover/link:translate-x-1 transition-transform duration-200" />
+            <motion.div key={i} variants={itemVariants}>
+              <Link
+                to="/services"
+                className="group card-base cursor-pointer block hover:shadow-card-hover transition-all duration-300"
+              >
+                <div className="relative h-52 overflow-hidden">
+                  <img
+                    src={servicesMeta[i].image}
+                    alt={svc.title}
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                  />
+                  <span className={`absolute top-4 left-4 ${servicesMeta[i].tagColor} text-white text-xs font-bold px-3 py-1 rounded-full shadow`}>
+                    {svc.tag}
+                  </span>
                 </div>
-              </div>
+                <div className="p-8 text-center">
+                  <h3 className="text-base font-bold text-deep-green mb-3 leading-snug">{svc.title}</h3>
+                  <p className="text-gray-500 text-sm leading-relaxed mb-5">{svc.description}</p>
+                  <div className="flex items-center justify-center text-orange-accent font-semibold text-sm">
+                    {tx.learnMore}
+                    <ArrowRight size={15} className="ml-1.5 group-hover:translate-x-1 transition-transform duration-200" />
+                  </div>
+                </div>
+              </Link>
             </motion.div>
           ))}
         </motion.div>

@@ -17,7 +17,7 @@ export default function About() {
   const tx = t[language].about;
 
   return (
-    <section id="about" className="py-28 bg-cream">
+    <section id="about" className="py-14 md:py-28 bg-cream">
       <div className="container-custom">
 
         {/* ── Heading ─────────────────────────────── */}

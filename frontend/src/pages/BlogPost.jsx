@@ -128,7 +128,7 @@ export default function BlogPost() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.3 }}
-              className="mt-14 flex items-center gap-5 p-6 bg-white rounded-3xl"
+              className="mt-14 flex flex-col items-center text-center gap-4 p-8 bg-white rounded-3xl"
               style={{ boxShadow: '0 4px 24px rgba(0,0,0,0.07)' }}
             >
               <div
@@ -169,7 +169,7 @@ export default function BlogPost() {
                         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                       />
                     </div>
-                    <div className="p-4">
+                    <div className="p-8 text-center">
                       <p className="font-bold text-sm leading-snug mb-1" style={{ color: '#1B4332' }}>
                         {rp.title}
                       </p>

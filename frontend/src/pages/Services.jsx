@@ -37,7 +37,7 @@ export default function ServicesPage() {
         subtitle={tx.bannerSubtitle}
       />
 
-      <section className="py-28 bg-cream">
+      <section className="py-14 md:py-28 bg-cream">
         <div className="container-custom space-y-24">
           {tx.services.map((svc, i) => {
             const { icon: Icon, image, tagColor } = servicesMeta[i];

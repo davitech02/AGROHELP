@@ -35,14 +35,14 @@ function FeaturedCard({ post, tx }) {
           <span className="text-white text-xs font-bold px-3 py-1 rounded-full" style={{ background: '#E07B39' }}>{tx.featured}</span>
         </div>
       </div>
-      <div className="p-8 md:p-10 flex flex-col justify-center">
-        <div className="flex items-center gap-3 mb-5">
+      <div className="p-8 md:p-10 flex flex-col justify-center items-center text-center">
+        <div className="flex items-center justify-center gap-3 mb-5">
           <CategoryBadge name={post.category} />
           <span className="text-gray-400 text-xs flex items-center gap-1"><Clock size={11} />{post.readTime}</span>
         </div>
         <h2 className="text-2xl font-extrabold mb-4 leading-tight" style={{ color: '#1B4332' }}>{post.title}</h2>
         <p className="text-gray-500 text-sm leading-relaxed mb-7 line-clamp-4">{post.excerpt}</p>
-        <div className="flex items-center justify-between">
+        <div className="flex flex-col items-center gap-3">
           <div>
             <p className="text-xs font-semibold" style={{ color: '#1B4332' }}>{post.author}</p>
             <p className="text-xs text-gray-400 mt-0.5">{post.date}</p>
@@ -71,15 +71,15 @@ function PostCard({ post, delay = 0, tx }) {
         <img src={post.image} alt={post.title} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" loading="lazy" />
         <div className="absolute top-3 left-3"><CategoryBadge name={post.category} /></div>
       </div>
-      <div className="p-6 flex flex-col flex-1 min-h-0">
-        <div className="flex items-center gap-2 mb-3">
+      <div className="p-8 flex flex-col flex-1 min-h-0 text-center">
+        <div className="flex items-center justify-center gap-2 mb-3">
           <span className="text-xs text-gray-400 flex items-center gap-1"><Clock size={10} />{post.readTime}</span>
           <span className="text-gray-200">·</span>
           <span className="text-xs text-gray-400">{post.date}</span>
         </div>
         <h3 className="font-bold text-base leading-snug mb-3" style={{ color: '#1B4332' }}>{post.title}</h3>
         <p className="text-gray-500 text-sm leading-relaxed mb-5 line-clamp-3 flex-1">{post.excerpt}</p>
-        <div className="flex items-center justify-between pt-4 border-t border-gray-100">
+        <div className="flex flex-col items-center gap-3 pt-4 border-t border-gray-100">
           <p className="text-xs font-semibold" style={{ color: '#1B4332' }}>{post.author}</p>
           <Link to={`/blog/${post.id}`} className="inline-flex items-center gap-1 text-xs font-bold group/btn" style={{ color: '#E07B39' }}>
             {tx.readMore}
@@ -105,7 +105,7 @@ export default function BlogPage() {
         subtitle={tx.bannerSubtitle}
       />
 
-      <section className="py-28 bg-cream">
+      <section className="py-14 md:py-28 bg-cream">
         <div className="container-custom">
 
           {featured && (

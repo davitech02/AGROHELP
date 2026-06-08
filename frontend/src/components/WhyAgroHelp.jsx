@@ -11,7 +11,7 @@ export default function WhyAgroHelp() {
   const tx = t[language].whyAgroHelp;
 
   return (
-    <section id="platform" className="py-28 bg-cream">
+    <section id="platform" className="py-14 md:py-28 bg-cream">
       <div className="container-custom">
 
         <motion.div
@@ -92,7 +92,7 @@ export default function WhyAgroHelp() {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ delay: 0.5, duration: 0.55 }}
-              className="absolute bottom-6 left-6 right-6 bg-white/92 backdrop-blur-sm rounded-2xl p-4 shadow-card"
+              className="absolute bottom-6 left-6 right-6 bg-white/92 backdrop-blur-sm rounded-2xl p-5 shadow-card"
             >
               <p className="font-bold text-deep-green text-sm">{tx.badgeTitle}</p>
               <p className="text-xs text-gray-500 mt-0.5">{tx.badgeText}</p>

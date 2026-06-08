@@ -51,7 +51,7 @@ export default function Contact() {
     'w-full px-5 py-4 rounded-xl border border-gray-200 focus:outline-none text-sm placeholder-gray-400 transition-all duration-200 bg-white focus:border-[#1B4332] focus:ring-2 focus:ring-[#1B4332]/10';
 
   const contactRows = [
-    { Icon: MapPin, label: tx.headOffice, lines: ['Rue des, Dijon (21000), France'], iconBg: 'rgba(27,67,50,0.10)', iconColor: '#1B4332' },
+    { Icon: MapPin, label: tx.headOffice, lines: ['Douala — Cameroun', 'Dijon — France'], iconBg: 'rgba(27,67,50,0.10)', iconColor: '#1B4332' },
     { Icon: Mail,   label: tx.emailUs,   lines: ['info@agrohelp.com', 'consulting@agrohelp.com'], hrefs: ['mailto:info@agrohelp.com', 'mailto:consulting@agrohelp.com'], iconBg: 'rgba(224,123,57,0.12)', iconColor: '#E07B39' },
     { Icon: Phone,  label: tx.callUs,    lines: ['+33 7 46 33 29 37'], hrefs: ['tel:+33746332937'], iconBg: 'rgba(27,67,50,0.10)', iconColor: '#1B4332' },
   ];

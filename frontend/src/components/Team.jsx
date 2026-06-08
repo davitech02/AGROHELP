@@ -1,20 +1,16 @@
 import { motion } from 'framer-motion';
-import { ExternalLink, Mail } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
 import t from '../translations';
+import imgEric from '../assets/Landry.jpg';
+import imgIbrahim from '../assets/Ibrahim.png';
+import imgStephane from '../assets/stephane.jpg';
+import imgSuzy from '../assets/suzy.jpg';
 
-const teamMeta = [
-  { id: 1, name: 'Dr. Emmanuel Okafor', image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=500&h=600&fit=crop&q=80' },
-  { id: 2, name: 'Amara Mensah',        image: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=500&h=600&fit=crop&q=80' },
-  { id: 3, name: 'Ahmed Hassan',        image: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=500&h=600&fit=crop&q=80' },
-  { id: 4, name: 'Priya Patel',         image: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=500&h=600&fit=crop&q=80' },
-  { id: 5, name: 'Kwame Boateng',       image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=500&h=600&fit=crop&q=80' },
-  { id: 6, name: 'Zara Okonkwo',        image: 'https://images.unsplash.com/photo-1534528741775-53994a69be16?w=500&h=600&fit=crop&q=80' },
-];
+const memberImages = [imgEric, imgIbrahim, imgStephane, imgSuzy];
 
 const containerVariants = {
   hidden: { opacity: 0 },
-  visible: { opacity: 1, transition: { staggerChildren: 0.1 } },
+  visible: { opacity: 1, transition: { staggerChildren: 0.12 } },
 };
 const itemVariants = {
   hidden: { opacity: 0, y: 32 },
@@ -26,7 +22,7 @@ export default function Team() {
   const tx = t[language].team;
 
   return (
-    <section id="team" className="py-28 bg-cream">
+    <section id="team" className="py-16 md:py-24 bg-white">
       <div className="container-custom">
 
         <motion.div
@@ -38,7 +34,7 @@ export default function Team() {
         >
           <span className="section-label">{tx.label}</span>
           <h2 className="section-title">{tx.title}</h2>
-          <p className="section-subtitle">{tx.subtitle}</p>
+          <p className="section-subtitle max-w-3xl mx-auto">{tx.subtitle}</p>
         </motion.div>
 
         <motion.div
@@ -46,28 +42,28 @@ export default function Team() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.08 }}
-          className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 xl:gap-8"
+          className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 xl:gap-8"
         >
-          {teamMeta.map((member, i) => (
+          {tx.members.map((member, i) => (
             <motion.div
-              key={member.id}
+              key={i}
               variants={itemVariants}
-              className="group relative bg-white rounded-4xl overflow-hidden shadow-card hover:shadow-card-hover transition-all duration-500"
+              className="group bg-cream rounded-4xl overflow-hidden shadow-card hover:shadow-card-hover transition-all duration-500 flex flex-col"
             >
-              <div className="relative h-72 overflow-hidden bg-gray-100">
-                <img src={member.image} alt={member.name} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
-                <div className="absolute inset-0 bg-deep-green/0 group-hover:bg-deep-green/40 transition-all duration-400 flex items-center justify-center gap-3 opacity-0 group-hover:opacity-100">
-                  <a href="#" className="w-10 h-10 bg-white rounded-2xl flex items-center justify-center shadow-lg hover:bg-orange-accent hover:text-white transition-colors duration-200">
-                    <ExternalLink size={18} className="text-deep-green group-hover:text-white transition-colors" />
-                  </a>
-                  <a href="#" className="w-10 h-10 bg-white rounded-2xl flex items-center justify-center shadow-lg hover:bg-orange-accent hover:text-white transition-colors duration-200">
-                    <Mail size={18} className="text-deep-green group-hover:text-white transition-colors" />
-                  </a>
-                </div>
+              <div className="relative h-56 overflow-hidden bg-gray-100">
+                <img
+                  src={memberImages[i]}
+                  alt={member.name}
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-deep-green/40 to-transparent" />
               </div>
-              <div className="p-5 text-center">
-                <h3 className="text-lg font-bold text-deep-green mb-1.5">{member.name}</h3>
-                <p className="text-orange-accent font-semibold text-sm">{tx.roles[i]}</p>
+              <div className="p-8 flex flex-col gap-3 flex-1 items-center text-center">
+                <div>
+                  <h3 className="text-lg font-bold text-deep-green">{member.name}</h3>
+                  <p className="text-orange-accent font-semibold text-sm mt-0.5">{member.role}</p>
+                </div>
+                <p className="text-gray-500 text-sm leading-relaxed">{member.bio}</p>
               </div>
             </motion.div>
           ))}

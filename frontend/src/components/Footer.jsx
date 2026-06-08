@@ -20,15 +20,15 @@ export default function Footer() {
           {/* Brand column */}
           <div>
             <div className="mb-5">
-              <img src={logo} alt="AgroHelp" className="h-10 w-auto object-contain" />
+              <img src={logo} alt="AgroHelp" className="h-14 w-auto object-contain" />
             </div>
             <p className="text-gray-300 text-sm leading-relaxed mb-6">{tx.brandDesc}</p>
             <div className="flex gap-2.5">
-              {[0,1,2,3].map(i => (
+              {[0, 1, 2, 3].map(i => (
                 <a
                   key={i}
                   href="#"
-                  aria-label="Social link"
+                  aria-label="Réseau social"
                   className="w-9 h-9 flex items-center justify-center transition-colors duration-300 hover:text-white"
                   style={{ background: 'rgba(255,255,255,0.10)', borderRadius: '0.75rem' }}
                   onMouseEnter={e => e.currentTarget.style.background = ORANGE}
@@ -46,25 +46,25 @@ export default function Footer() {
             <ul className="space-y-2.5 text-gray-300 text-sm">
               {tx.serviceLinks.map((item) => (
                 <li key={item}>
-                  <a href="#services" className="hover:text-orange-accent transition-colors duration-200">{item}</a>
+                  <Link to="/services" className="hover:text-orange-accent transition-colors duration-200">{item}</Link>
                 </li>
               ))}
             </ul>
           </div>
 
-          {/* Company column */}
+          {/* Navigation column */}
           <div>
             <h4 className="font-bold text-base mb-5 text-white">{tx.companyHeading}</h4>
             <ul className="space-y-2.5 text-gray-300 text-sm">
               {tx.companyLinks.map((item) => (
                 <li key={item.label}>
-                  <a href={item.href} className="hover:text-orange-accent transition-colors duration-200">{item.label}</a>
+                  <Link to={item.href} className="hover:text-orange-accent transition-colors duration-200">{item.label}</Link>
                 </li>
               ))}
             </ul>
           </div>
 
-          {/* Contact + Newsletter column */}
+          {/* Contact + Locations column */}
           <div>
             <h4 className="font-bold text-base mb-5 text-white">{tx.contactHeading}</h4>
             <ul className="space-y-3 text-gray-300 text-sm mb-7">
@@ -84,10 +84,12 @@ export default function Footer() {
                 <Mail size={14} style={{ color: ORANGE, flexShrink: 0 }} />
                 <a href="mailto:info@agrohelp.com" className="hover:text-orange-accent transition-colors">info@agrohelp.com</a>
               </li>
-              <li className="flex items-start gap-2.5">
-                <MapPin size={14} style={{ color: ORANGE, marginTop: '2px', flexShrink: 0 }} />
-                <span>Rue des, Dijon (21000), France</span>
-              </li>
+              {tx.locations.map((loc) => (
+                <li key={loc} className="flex items-center gap-2.5">
+                  <MapPin size={14} style={{ color: ORANGE, flexShrink: 0 }} />
+                  <span>{loc}</span>
+                </li>
+              ))}
             </ul>
 
             {/* Newsletter */}
@@ -103,7 +105,7 @@ export default function Footer() {
                   onBlur={e => e.currentTarget.style.borderColor = 'rgba(255,255,255,0.18)'}
                 />
                 <button
-                  aria-label="Subscribe"
+                  aria-label="S'abonner"
                   className="w-11 h-11 flex items-center justify-center shrink-0 transition-opacity hover:opacity-90"
                   style={{ background: ORANGE, borderRadius: '0.875rem' }}
                 >
