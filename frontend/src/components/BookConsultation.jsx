@@ -10,7 +10,7 @@ export default function BookConsultation() {
   const tx = t[language].bookConsultation;
 
   return (
-    <section id="booking" className="py-28 bg-cream">
+    <section id="booking" className="py-16 md:py-24 bg-cream">
       <div className="container-custom">
         <div className="grid lg:grid-cols-2 gap-12 xl:gap-16 items-center">
 
@@ -23,10 +23,10 @@ export default function BookConsultation() {
           >
             <span className="section-label">{tx.label}</span>
             <h2 className="section-title mt-1 mb-3">{tx.title}</h2>
-            <p className="section-subtitle mb-8">{tx.subtitle}</p>
+            <p className="section-subtitle mb-10">{tx.subtitle}</p>
 
-            {/* Appointment cards */}
-            <div className="grid grid-cols-2 gap-5 mb-12">
+            {/* Appointment cards — 1 col mobile, 2 col sm+ */}
+            <div className="grid sm:grid-cols-2 gap-5 mb-10">
               {tx.appointments.map((apt, i) => {
                 const Icon = appointmentIcons[i];
                 return (
@@ -36,32 +36,32 @@ export default function BookConsultation() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ delay: i * 0.1, duration: 0.5 }}
-                    className="group bg-white rounded-3xl p-5 shadow-card hover:shadow-card-hover border-2 border-transparent hover:border-orange-accent transition-all duration-300 cursor-pointer text-center"
+                    className="group bg-white rounded-3xl p-7 shadow-card hover:shadow-card-hover border-2 border-transparent hover:border-orange-accent transition-all duration-300 text-center"
                   >
-                    <div className="w-10 h-10 bg-deep-green/8 rounded-2xl flex items-center justify-center mb-4 group-hover:bg-orange-accent/12 transition-colors mx-auto">
-                      <Icon size={20} className="text-deep-green group-hover:text-orange-accent transition-colors" />
+                    <div className="w-12 h-12 rounded-2xl flex items-center justify-center mb-4 mx-auto group-hover:bg-orange-accent/12 transition-colors" style={{ background: 'rgba(27,67,50,0.08)' }}>
+                      <Icon size={22} className="text-deep-green group-hover:text-orange-accent transition-colors" />
                     </div>
-                    <h4 className="font-bold text-deep-green text-sm mb-1">{apt.title}</h4>
-                    <p className="text-gray-400 text-xs mb-2 leading-snug">{apt.description}</p>
-                    <p className="text-orange-accent font-extrabold text-base">{apt.price}</p>
+                    <h4 className="font-bold text-deep-green text-sm mb-2">{apt.title}</h4>
+                    <p className="text-gray-500 text-sm leading-relaxed">{apt.description}</p>
                   </motion.div>
                 );
               })}
             </div>
 
-            {/* Quick inquiry form */}
-            <div className="bg-white rounded-4xl p-6 shadow-card">
-              <h3 className="font-bold text-deep-green mb-4 text-base">{tx.formTitle}</h3>
-              <div className="space-y-3">
+            {/* Demande Rapide form */}
+            <div className="bg-white rounded-4xl p-8 shadow-card">
+              <h3 className="font-bold text-deep-green text-base mb-6 text-center">{tx.formTitle}</h3>
+              <div className="space-y-4">
                 <input
                   type="text"
                   placeholder={tx.namePlaceholder}
-                  className="w-full px-4 py-3 rounded-2xl border border-gray-200 focus:outline-none focus:border-deep-green text-sm bg-cream placeholder-gray-400 transition-colors"
+                  className="w-full px-5 py-4 rounded-2xl border border-gray-200 focus:outline-none focus:border-deep-green text-sm bg-cream placeholder-gray-400 transition-all duration-200"
+                  style={{ '--tw-ring-color': 'rgba(27,67,50,0.10)' }}
                 />
                 <input
                   type="email"
                   placeholder={tx.emailPlaceholder}
-                  className="w-full px-4 py-3 rounded-2xl border border-gray-200 focus:outline-none focus:border-deep-green text-sm bg-cream placeholder-gray-400 transition-colors"
+                  className="w-full px-5 py-4 rounded-2xl border border-gray-200 focus:outline-none focus:border-deep-green text-sm bg-cream placeholder-gray-400 transition-all duration-200"
                 />
                 <button
                   onClick={() => window.open('https://calendly.com/dokolandry33/30min', '_blank')}
@@ -74,29 +74,30 @@ export default function BookConsultation() {
             </div>
           </motion.div>
 
-          {/* ── Right: large image ─────────────────── */}
+          {/* ── Right: image ─────────────────────── */}
           <motion.div
             initial={{ opacity: 0, x: 40 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="relative hidden lg:block"
+            className="relative"
           >
-            <div className="relative rounded-5xl overflow-hidden h-[680px] shadow-2xl">
+            <div className="relative rounded-4xl overflow-hidden h-[260px] sm:h-[380px] lg:h-[680px] shadow-2xl">
               <img
-                src="https://images.unsplash.com/photo-1607863680198-23d4b2565df0?w=650&h=850&fit=crop&q=80"
-                alt="Consultation"
+                src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=650&h=850&fit=crop&q=80"
+                alt="Consultation agricole professionnelle"
                 className="w-full h-full object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-deep-green/45 to-transparent" />
             </div>
 
+            {/* Star rating badge — desktop only to avoid overflow */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.6, duration: 0.6 }}
-              className="absolute -left-8 top-12 bg-white rounded-xl p-4 shadow-card-hover min-w-[170px]"
+              className="hidden lg:block absolute -left-8 top-12 bg-white rounded-xl p-5 shadow-card-hover min-w-[170px]"
             >
               <div className="flex items-center gap-0.5 mb-1.5">
                 {[...Array(5)].map((_, i) => <span key={i} className="text-orange-accent">★</span>)}
@@ -104,19 +105,8 @@ export default function BookConsultation() {
               <p className="font-bold text-deep-green text-sm">{tx.ratingTitle}</p>
               <p className="text-gray-400 text-sm">{tx.ratingDesc}</p>
             </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.75, duration: 0.6 }}
-              className="absolute -right-6 bottom-20 bg-deep-green rounded-3xl px-5 py-4 shadow-green-glow"
-            >
-              <p className="text-white font-bold text-sm">{tx.availTitle}</p>
-              <p className="text-orange-accent text-lg font-extrabold">{tx.availDay}</p>
-              <p className="text-white/50 text-xs">{tx.availTime}</p>
-            </motion.div>
           </motion.div>
+
         </div>
       </div>
     </section>

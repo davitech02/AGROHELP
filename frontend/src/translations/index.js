@@ -483,7 +483,7 @@ const t = {
       subtitle: "Notre équipe réunit des experts passionnés et expérimentés, combinant des compétences en agribusiness, agronomie, qualité, sécurité, environnement et gestion de projets. Grâce à des parcours académiques reconnus en France et à une solide expérience de terrain, nous accompagnons nos clients avec rigueur, innovation et engagement vers des résultats durables.",
       members: [
         {
-          name: 'Eric',
+          name: 'Landry Eric',
           role: 'CEO & Expert en Agribusiness',
           bio:  "Ingénieur en Agribusiness et titulaire d'un Master en Management et Administration des Entreprises en France. Fort de plus de 10 ans d'expérience, il accompagne le développement, la structuration et la réussite de projets agricoles à fort impact.",
         },

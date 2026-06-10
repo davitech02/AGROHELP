@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import { useState, useEffect } from 'react';
 
 const vp = { once: true, amount: 0.08 };
 
@@ -10,7 +11,25 @@ const paragraphs = [
   "C'est dans ce contexte qu'AgroHelp Group a été créé, afin de répondre à un besoin structurel de structuration, de sécurisation et de professionnalisation des projets agricoles. Le cabinet se positionne comme un acteur d'interface entre la stratégie, l'investissement et le terrain, en facilitant également l'implication de la diaspora grâce à des dispositifs d'accompagnement, de suivi et de pilotage des projets à distance. Ainsi, AgroHelp Group contribue à la transformation du secteur agricole en apportant une expertise intégrée combinant analyse stratégique, ingénierie de projet et accompagnement opérationnel, afin de convertir le potentiel agricole africain en opportunités économiques concrètes, durables et investissables.",
 ];
 
+const slides = [
+  { src: 'https://images.unsplash.com/photo-1464226184884-fa280b87c399?w=700&h=560&fit=crop&q=80', alt: 'Culture maraîchère en Afrique' },
+  { src: 'https://images.unsplash.com/photo-1500595046743-cd271d694d30?w=700&h=560&fit=crop&q=80', alt: 'Élevage bovin' },
+  { src: 'https://images.unsplash.com/photo-1548550023-2bdb3c5beed7?w=700&h=560&fit=crop&q=80', alt: 'Élevage de volailles' },
+  { src: 'https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=700&h=560&fit=crop&q=80', alt: 'Irrigation et production végétale' },
+  { src: 'https://images.unsplash.com/photo-1516467508483-a7212febe31a?w=700&h=560&fit=crop&q=80', alt: 'Aviculture et volailles' },
+  { src: 'https://images.unsplash.com/photo-1625246333195-78d9c38ad449?w=700&h=560&fit=crop&q=80', alt: 'Agriculteurs travaillant sur le terrain' },
+];
+
 export default function Enjeux() {
+  const [current, setCurrent] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrent(prev => (prev + 1) % slides.length);
+    }, 3500);
+    return () => clearInterval(timer);
+  }, []);
+
   return (
     <section className="py-16 md:py-24 bg-cream">
       <div className="container-custom">
@@ -50,38 +69,25 @@ export default function Enjeux() {
             ))}
           </motion.div>
 
-          {/* ── Right: image ─────────────────── */}
+          {/* ── Right: slideshow ─────────────────── */}
           <motion.div
             initial={{ opacity: 0, x: 40 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={vp}
             transition={{ duration: 0.8, delay: 0.15 }}
-            className="relative lg:sticky lg:top-28"
+            className="lg:sticky lg:top-28"
           >
-            <div className="relative rounded-4xl overflow-hidden shadow-2xl h-[420px]">
-              <img
-                src="https://images.unsplash.com/photo-1464226184884-fa280b87c399?w=700&h=560&fit=crop&q=80"
-                alt="Innovation agricole et production"
-                className="w-full h-full object-cover"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-deep-green/50 to-transparent" />
-              <div className="absolute bottom-6 left-6 right-6">
-                <p className="text-white font-bold text-lg leading-snug">Innovation · Production végétale · Élevage</p>
-                <p className="text-white/70 text-sm mt-1">Modernisation de l'agriculture africaine</p>
-              </div>
+            <div className="relative rounded-4xl overflow-hidden shadow-2xl h-[260px] sm:h-[340px] lg:h-[420px]">
+              {slides.map((slide, i) => (
+                <img
+                  key={i}
+                  src={slide.src}
+                  alt={slide.alt}
+                  className="absolute inset-0 w-full h-full object-cover transition-opacity duration-700"
+                  style={{ opacity: i === current ? 1 : 0 }}
+                />
+              ))}
             </div>
-
-            <motion.div
-              initial={{ opacity: 0, scale: 0.85 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={vp}
-              transition={{ delay: 0.45, duration: 0.55 }}
-              className="absolute -right-5 top-8 bg-white rounded-3xl p-7 shadow-card-hover text-center"
-            >
-              <p className="text-xs text-gray-400 font-medium mb-0.5">Secteur clé</p>
-              <p className="font-extrabold text-deep-green text-xl">Agriculture</p>
-              <p className="text-xs text-orange-accent font-semibold mt-0.5">Afrique subsaharienne</p>
-            </motion.div>
           </motion.div>
         </div>
       </div>

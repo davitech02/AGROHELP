@@ -19,7 +19,7 @@ const cards = [
   {
     icon: Dna,
     label: 'Notre ADN',
-    text: "AgroHelp Group repose sur une approche hybride qui combine expertise terrain, vision stratégique et innovation. Nous comprenons les réalités agricoles concrètes tout en structurant des projets solides et bancables. Notre démarche est orientée performance, impact durable et intégration des solutions innovantes pour répondre aux défis du secteur agricole.",
+    text: "Nous comprenons les réalités agricoles concrètes tout en structurant des projets solides et bancables. Notre démarche est orientée performance, impact durable et intégration des solutions innovantes pour répondre aux défis du secteur agricole.",
     accent: '#E07B39',
   },
 ];
@@ -74,14 +74,17 @@ export default function MissionVisionADN() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={vp}
           transition={{ duration: 0.7 }}
-          className="rounded-4xl p-10 md:p-14 text-center"
+          className="rounded-4xl p-10 md:p-14 flex flex-col items-center text-center"
           style={{ background: 'linear-gradient(135deg, #1B4332 0%, #2D6A4F 100%)' }}
         >
-          <span className="inline-block text-xs font-bold uppercase tracking-widest text-orange-accent mb-4">Positionnement global</span>
-          <p className="text-white text-xl md:text-2xl font-medium leading-relaxed max-w-3xl mx-auto">
-            AgroHelp Group est un cabinet de conseil stratégique dédié à la transformation de l'agriculture africaine. Nous faisons le lien entre la stratégie et le terrain pour accompagner des projets agricoles performants, durables et générateurs de valeur à chaque étape de leur développement.
+          <span className="inline-block text-xs font-bold uppercase tracking-widest mb-4" style={{ color: '#E07B39' }}>
+            Positionnement Global
+          </span>
+          <p className="text-white text-xl md:text-2xl font-medium leading-relaxed max-w-3xl text-center">
+            Nous faisons le lien entre la stratégie et le terrain pour accompagner des projets agricoles performants, durables et générateurs de valeur à chaque étape de leur développement.
           </p>
         </motion.div>
+
       </div>
     </section>
   );

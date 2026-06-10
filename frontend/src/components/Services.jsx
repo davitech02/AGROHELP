@@ -42,7 +42,6 @@ export default function Services() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <span className="section-label">{tx.label}</span>
           <h2 className="section-title">{tx.title}</h2>
           <p className="section-subtitle">{tx.subtitle}</p>
         </motion.div>
