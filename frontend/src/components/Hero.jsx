@@ -2,6 +2,13 @@ import { motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
 import t from '../translations';
+import { useCountUp, parseCountValue } from '../utils/animations';
+
+function StatCounter({ value }) {
+  const { target, suffix } = parseCountValue(value);
+  const [count, ref] = useCountUp(target, 2000);
+  return <span ref={ref}>{count}{suffix}</span>;
+}
 
 export default function Hero() {
   const { language } = useLanguage();
@@ -73,7 +80,9 @@ export default function Hero() {
             >
               {tx.stats.map((s) => (
                 <div key={s.lbl}>
-                  <div className="text-4xl font-extrabold text-white">{s.num}</div>
+                  <div className="text-4xl font-extrabold text-white">
+                    <StatCounter value={s.num} />
+                  </div>
                   <div className="text-white/55 text-sm mt-0.5">{s.lbl}</div>
                 </div>
               ))}

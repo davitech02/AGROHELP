@@ -7,6 +7,13 @@ import Footer from '../components/Footer';
 import { useLanguage } from '../context/LanguageContext';
 import t from '../translations';
 import missionImg from '../assets/mission.png';
+import { useCountUp, parseCountValue } from '../utils/animations';
+
+function StatCounter({ value }) {
+  const { target, suffix } = parseCountValue(value);
+  const [count, ref] = useCountUp(target, 2000);
+  return <span ref={ref}>{count}{suffix}</span>;
+}
 
 const vp = { once: true, amount: 0.15 };
 const valueIcons = [CheckCircle2, Target, Heart, Leaf];
@@ -57,7 +64,7 @@ export default function AboutPage() {
               <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
                 {tx.stats.map((s, i) => (
                   <div key={i} className="text-center p-6 bg-deep-green/5 rounded-2xl">
-                    <div className="text-xl font-extrabold" style={{ color: '#1B4332' }}>{s.number}</div>
+                    <div className="text-xl font-extrabold" style={{ color: '#1B4332' }}><StatCounter value={s.number} /></div>
                     <div className="text-xs text-gray-500 mt-0.5 leading-tight">{s.label}</div>
                   </div>
                 ))}

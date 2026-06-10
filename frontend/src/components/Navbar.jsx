@@ -4,9 +4,11 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import logo from '../assets/logo.png';
 import { useLanguage } from '../context/LanguageContext';
 import t from '../translations';
+import { useScrolledNavbar } from '../utils/animations';
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const scrolled = useScrolledNavbar();
   const location = useLocation();
   const navigate = useNavigate();
   const { language } = useLanguage();
@@ -37,7 +39,14 @@ export default function Navbar() {
   });
 
   return (
-    <nav className="fixed inset-x-0 top-0 z-50" style={{ backgroundColor: '#1B4332' }}>
+    <nav
+      className="fixed inset-x-0 top-0 z-50"
+      style={{
+        backgroundColor: '#1B4332',
+        boxShadow: scrolled ? '0 4px 32px rgba(0,0,0,0.22)' : 'none',
+        transition: 'box-shadow 0.35s ease',
+      }}
+    >
 
       {/* ── Desktop ──────────────────────────────────── */}
       <div className="container-custom hidden lg:flex items-center py-3 gap-6">

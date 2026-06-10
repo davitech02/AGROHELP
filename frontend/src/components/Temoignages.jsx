@@ -35,14 +35,6 @@ const temoignages = [
   },
 ];
 
-const containerVariants = {
-  hidden: { opacity: 0 },
-  visible: { opacity: 1, transition: { staggerChildren: 0.1 } },
-};
-const itemVariants = {
-  hidden: { opacity: 0, y: 28 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
-};
 
 export default function Temoignages() {
   return (
@@ -61,17 +53,14 @@ export default function Temoignages() {
           <p className="section-subtitle">Ils nous ont fait confiance pour structurer et développer leurs projets agricoles.</p>
         </motion.div>
 
-        <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.06 }}
-          className="grid md:grid-cols-2 lg:grid-cols-3 gap-6"
-        >
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {temoignages.map((t, i) => (
             <motion.div
               key={i}
-              variants={itemVariants}
+              initial={{ opacity: 0, x: i % 2 === 0 ? -50 : 50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, amount: 0.08 }}
+              transition={{ delay: i * 0.08, duration: 0.65, ease: [0.22, 1, 0.36, 1] }}
               className="bg-white rounded-4xl p-8 shadow-card flex flex-col items-center text-center gap-5"
             >
               {/* Quote mark */}
@@ -100,7 +89,7 @@ export default function Temoignages() {
               </div>
             </motion.div>
           ))}
-        </motion.div>
+        </div>
       </div>
     </section>
   );
