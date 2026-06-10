@@ -1,5 +1,10 @@
 import { motion } from 'framer-motion';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
+import { ChevronLeft, ChevronRight } from 'lucide-react';
+import carousel1 from '../assets/carousel1.jpg';
+import carousel5 from '../assets/carousel5.jpg';
+import carousel6 from '../assets/carousel6.jpg';
+import carousel7 from '../assets/carousel7.jpg';
 
 const vp = { once: true, amount: 0.08 };
 
@@ -20,8 +25,23 @@ const slides = [
   { src: 'https://images.unsplash.com/photo-1625246333195-78d9c38ad449?w=700&h=560&fit=crop&q=80', alt: 'Agriculteurs travaillant sur le terrain' },
 ];
 
+const carouselImages = [
+  { src: carousel1, alt: 'Agriculture — image 1' },
+  { src: 'https://images.unsplash.com/photo-1535585209827-a15fcdbc4c2d?w=320&h=220&fit=crop&q=80', alt: 'Champ de blé & céréales' },
+  { src: 'https://images.unsplash.com/photo-1518717758536-85ae29035b6d?w=320&h=220&fit=crop&q=80', alt: 'Aviculture — coq de ferme' },
+  { src: 'https://images.unsplash.com/photo-1530836369250-ef72a3f5cda8?w=320&h=220&fit=crop&q=80', alt: 'Culture de maïs' },
+  { src: carousel5, alt: 'Agriculture — image 5' },
+  { src: carousel6, alt: 'Agriculture — image 6' },
+  { src: carousel7, alt: 'Agriculture — image 7' },
+];
+
+const VISIBLE = 3;
+const MAX_START = carouselImages.length - VISIBLE; // 4
+
 export default function Enjeux() {
   const [current, setCurrent] = useState(0);
+  const [carouselStart, setCarouselStart] = useState(0);
+  const touchStartX = useRef(null);
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -29,6 +49,18 @@ export default function Enjeux() {
     }, 3500);
     return () => clearInterval(timer);
   }, []);
+
+  const prevCarousel = () => setCarouselStart(s => Math.max(0, s - 1));
+  const nextCarousel = () => setCarouselStart(s => Math.min(MAX_START, s + 1));
+
+  const onTouchStart = (e) => { touchStartX.current = e.touches[0].clientX; };
+  const onTouchEnd = (e) => {
+    if (touchStartX.current === null) return;
+    const dx = touchStartX.current - e.changedTouches[0].clientX;
+    if (dx > 40) nextCarousel();
+    else if (dx < -40) prevCarousel();
+    touchStartX.current = null;
+  };
 
   return (
     <section className="py-16 md:py-24 bg-cream">
@@ -69,14 +101,15 @@ export default function Enjeux() {
             ))}
           </motion.div>
 
-          {/* ── Right: slideshow ─────────────────── */}
+          {/* ── Right: main slideshow + mini carousel ── */}
           <motion.div
             initial={{ opacity: 0, x: 40 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={vp}
             transition={{ duration: 0.8, delay: 0.15 }}
-            className="lg:sticky lg:top-28"
+            className="lg:sticky lg:top-28 flex flex-col gap-4"
           >
+            {/* Main auto-play slideshow */}
             <div className="relative rounded-4xl overflow-hidden shadow-2xl h-[260px] sm:h-[340px] lg:h-[420px]">
               {slides.map((slide, i) => (
                 <img
@@ -87,6 +120,55 @@ export default function Enjeux() {
                   style={{ opacity: i === current ? 1 : 0 }}
                 />
               ))}
+            </div>
+
+            {/* Mini carousel — 3 images visible at a time */}
+            <div className="relative px-6">
+              {/* Left arrow */}
+              <button
+                onClick={prevCarousel}
+                disabled={carouselStart === 0}
+                aria-label="Précédent"
+                className="absolute left-0 top-1/2 -translate-y-1/2 z-10 w-8 h-8 bg-white rounded-full shadow-md flex items-center justify-center disabled:opacity-25 transition-opacity hover:shadow-lg"
+              >
+                <ChevronLeft size={16} style={{ color: '#1B4332' }} />
+              </button>
+
+              {/* Sliding track */}
+              <div
+                className="overflow-hidden rounded-2xl"
+                onTouchStart={onTouchStart}
+                onTouchEnd={onTouchEnd}
+              >
+                <div
+                  className="flex transition-transform duration-500 ease-in-out"
+                  style={{ transform: `translateX(-${carouselStart * (100 / VISIBLE)}%)` }}
+                >
+                  {carouselImages.map((img, i) => (
+                    <div
+                      key={i}
+                      className="flex-shrink-0 px-1"
+                      style={{ width: `${100 / VISIBLE}%` }}
+                    >
+                      <img
+                        src={img.src}
+                        alt={img.alt}
+                        className="w-full h-24 object-cover rounded-xl"
+                      />
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Right arrow */}
+              <button
+                onClick={nextCarousel}
+                disabled={carouselStart === MAX_START}
+                aria-label="Suivant"
+                className="absolute right-0 top-1/2 -translate-y-1/2 z-10 w-8 h-8 bg-white rounded-full shadow-md flex items-center justify-center disabled:opacity-25 transition-opacity hover:shadow-lg"
+              >
+                <ChevronRight size={16} style={{ color: '#1B4332' }} />
+              </button>
             </div>
           </motion.div>
         </div>
