@@ -2,13 +2,14 @@ const t = {
   en: {
     nav: {
       links: [
-        { label: 'Home',     href: '/' },
-        { label: 'About',    href: '/about' },
-        { label: 'Services', href: '/services' },
-        { label: 'Platform', href: '/platform' },
-        { label: 'Partners', href: '/partners' },
-        { label: 'Blog',     href: '/blog' },
-        { label: 'Contact',  href: '/contact' },
+        { label: 'Home',     href: '/'            },
+        { label: 'About',    href: '/about'        },
+        { label: 'Services', href: '/services'     },
+        { label: 'Our Team', href: '#team'         },
+        { label: 'Platform', href: '/platform'     },
+        { label: 'Partners', href: '/partners'     },
+        { label: 'Blog',     href: '/blog'         },
+        { label: 'Contact',  href: '/contact'      },
       ],
       cta: 'Get Connected',
     },
@@ -438,6 +439,7 @@ const t = {
       links: [
         { label: 'Accueil',        href: '/'            },
         { label: 'Nos offres',     href: '/services'    },
+        { label: 'Notre Équipe',   href: '#team'        },
         { label: 'Témoignages',    href: '#temoignages' },
         { label: 'Nous contacter', href: '/contact'     },
       ],
