@@ -1,30 +1,16 @@
 import { motion } from 'framer-motion';
 import { Target, Eye, Dna } from 'lucide-react';
+import { useLanguage } from '../context/LanguageContext';
+import translations from '../translations';
 
 const vp = { once: true, amount: 0.1 };
-
-const cards = [
-  {
-    icon: Target,
-    label: 'Notre Mission',
-    text: "AgroHelp Group a pour mission d'accompagner les acteurs de l'agriculture dans la conception, la structuration et le développement de projets agricoles performants, viables et à fort impact. Nous intervenons pour sécuriser les décisions stratégiques, réduire les risques, faciliter l'accès au financement et accélérer la mise en œuvre des projets.",
-    accent: '#1B4332',
-  },
-  {
-    icon: Eye,
-    label: 'Notre Vision',
-    text: "Nous ambitionnons de contribuer à une agriculture africaine moderne, compétitive et résiliente, capable de créer de la valeur durable tout en répondant aux enjeux alimentaires, économiques et climatiques.",
-    accent: '#2D6A4F',
-  },
-  {
-    icon: Dna,
-    label: 'Notre ADN',
-    text: "Nous comprenons les réalités agricoles concrètes tout en structurant des projets solides et bancables. Notre démarche est orientée performance, impact durable et intégration des solutions innovantes pour répondre aux défis du secteur agricole.",
-    accent: '#E07B39',
-  },
-];
+const icons = [Target, Eye, Dna];
+const accents = ['#1B4332', '#2D6A4F', '#E07B39'];
 
 export default function MissionVisionADN() {
+  const { language } = useLanguage();
+  const tx = translations[language].missionVisionADN;
+
   return (
     <section className="py-16 md:py-24 bg-white">
       <div className="container-custom">
@@ -36,14 +22,13 @@ export default function MissionVisionADN() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <span className="section-label">Qui Nous Sommes</span>
-          <h2 className="section-title">Notre Raison d'Être</h2>
+          <span className="section-label">{tx.sectionLabel}</span>
+          <h2 className="section-title">{tx.sectionTitle}</h2>
         </motion.div>
 
-        {/* Mission / Vision / ADN cards */}
         <div className="grid md:grid-cols-3 gap-7 mb-20">
-          {cards.map((card, i) => {
-            const Icon = card.icon;
+          {tx.cards.map((card, i) => {
+            const Icon = icons[i];
             return (
               <motion.div
                 key={i}
@@ -55,9 +40,9 @@ export default function MissionVisionADN() {
               >
                 <div
                   className="w-12 h-12 rounded-2xl flex items-center justify-center shrink-0"
-                  style={{ backgroundColor: `${card.accent}18` }}
+                  style={{ backgroundColor: `${accents[i]}18` }}
                 >
-                  <Icon size={24} style={{ color: card.accent }} />
+                  <Icon size={24} style={{ color: accents[i] }} />
                 </div>
                 <div>
                   <h3 className="text-lg font-bold mb-3" style={{ color: '#1B4332' }}>{card.label}</h3>
@@ -68,7 +53,6 @@ export default function MissionVisionADN() {
           })}
         </div>
 
-        {/* Positionnement global */}
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -78,10 +62,10 @@ export default function MissionVisionADN() {
           style={{ background: 'linear-gradient(135deg, #1B4332 0%, #2D6A4F 100%)' }}
         >
           <span className="inline-block text-xs font-bold uppercase tracking-widest mb-4" style={{ color: '#E07B39' }}>
-            Positionnement Global
+            {tx.positionLabel}
           </span>
           <p className="text-white text-xl md:text-2xl font-medium leading-relaxed max-w-3xl text-center">
-            Nous faisons le lien entre la stratégie et le terrain pour accompagner des projets agricoles performants, durables et générateurs de valeur à chaque étape de leur développement.
+            {tx.positionText}
           </p>
         </motion.div>
 

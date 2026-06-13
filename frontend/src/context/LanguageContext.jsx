@@ -6,7 +6,7 @@ export function LanguageProvider({ children }) {
   const [language, setLanguage] = useState('fr');
   const toggle = () => setLanguage(l => (l === 'en' ? 'fr' : 'en'));
   return (
-    <LanguageContext.Provider value={{ language, toggle }}>
+    <LanguageContext.Provider value={{ language, setLanguage, toggle }}>
       {children}
     </LanguageContext.Provider>
   );

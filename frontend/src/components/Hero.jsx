@@ -1,8 +1,17 @@
+import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
 import t from '../translations';
 import { useCountUp, parseCountValue } from '../utils/animations';
+
+const heroSlides = [
+  { src: 'https://images.unsplash.com/photo-1625246333195-78d9c38ad449?w=720&h=900&fit=crop&q=80', alt: 'Agriculteurs africains au travail' },
+  { src: 'https://images.unsplash.com/photo-1500595046743-cd271d694d30?w=720&h=900&fit=crop&q=80', alt: 'Élevage bovin en Afrique' },
+  { src: 'https://images.unsplash.com/photo-1464226184884-fa280b87c399?w=720&h=900&fit=crop&q=80', alt: 'Culture maraîchère africaine' },
+  { src: 'https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=720&h=900&fit=crop&q=80', alt: 'Irrigation et production végétale' },
+  { src: 'https://images.unsplash.com/photo-1516467508483-a7212febe31a?w=720&h=900&fit=crop&q=80', alt: 'Agriculture moderne et récolte' },
+];
 
 function StatCounter({ value }) {
   const { target, suffix } = parseCountValue(value);
@@ -13,6 +22,15 @@ function StatCounter({ value }) {
 export default function Hero() {
   const { language } = useLanguage();
   const tx = t[language].hero;
+
+  const [slideIndex, setSlideIndex] = useState(0);
+
+  useEffect(() => {
+    const id = setInterval(() => {
+      setSlideIndex((i) => (i + 1) % heroSlides.length);
+    }, 3500);
+    return () => clearInterval(id);
+  }, []);
 
   return (
     <section className="relative min-h-[600px] bg-deep-green overflow-hidden">
@@ -97,45 +115,32 @@ export default function Hero() {
             className="relative hidden lg:block"
           >
             <div className="relative rounded-5xl overflow-hidden shadow-2xl h-[600px] xl:h-[650px]">
-              <img
-                src="https://images.unsplash.com/photo-1625246333195-78d9c38ad449?w=720&h=900&fit=crop&q=80"
-                alt="Agriculture africaine"
-                className="w-full h-full object-cover"
-              />
+              {heroSlides.map((slide, i) => (
+                <img
+                  key={slide.src}
+                  src={slide.src}
+                  alt={slide.alt}
+                  className="absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ease-in-out"
+                  style={{ opacity: i === slideIndex ? 1 : 0 }}
+                />
+              ))}
               <div className="absolute inset-0 bg-gradient-to-t from-deep-green/35 to-transparent" />
+
+              {/* dot indicators */}
+              <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2 z-10">
+                {heroSlides.map((_, i) => (
+                  <button
+                    key={i}
+                    onClick={() => setSlideIndex(i)}
+                    className={`w-2 h-2 rounded-full transition-all duration-300 ${
+                      i === slideIndex ? 'bg-white w-5' : 'bg-white/50'
+                    }`}
+                    aria-label={`Slide ${i + 1}`}
+                  />
+                ))}
+              </div>
             </div>
 
-            <motion.div
-              initial={{ opacity: 0, x: -24 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: 1.05, duration: 0.65 }}
-              className="absolute -left-10 top-14 bg-white rounded-3xl p-5 shadow-card-hover"
-            >
-              <div className="flex items-center gap-3">
-                <div className="w-11 h-11 bg-orange-accent/15 rounded-2xl flex items-center justify-center text-xl">🌱</div>
-                <div>
-                  <p className="text-xs text-gray-400 font-medium">Projets actifs</p>
-                  <p className="font-extrabold text-deep-green text-xl leading-tight">100+</p>
-                </div>
-              </div>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, x: 24 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: 1.2, duration: 0.65 }}
-              className="absolute -right-8 bottom-20 bg-white rounded-3xl p-5 shadow-card-hover"
-            >
-              <div className="flex items-center gap-2 mb-1.5">
-                <div className="flex -space-x-1.5">
-                  <div className="w-7 h-7 rounded-full bg-green-400 border-2 border-white" />
-                  <div className="w-7 h-7 rounded-full bg-orange-400 border-2 border-white" />
-                  <div className="w-7 h-7 rounded-full bg-blue-400 border-2 border-white" />
-                </div>
-                <span className="text-xs text-gray-400">+50 partenaires</span>
-              </div>
-              <p className="text-sm font-bold text-deep-green">À travers l'Afrique</p>
-            </motion.div>
           </motion.div>
         </div>
       </div>

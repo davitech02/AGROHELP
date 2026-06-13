@@ -11,6 +11,7 @@ import Platform from './pages/Platform';
 import Partners from './pages/Partners';
 import Blog from './pages/Blog';
 import BlogPost from './pages/BlogPost';
+import ServiceDetail from './pages/ServiceDetail';
 import './App.css';
 
 function AnimatedRoutes() {
@@ -24,8 +25,9 @@ function AnimatedRoutes() {
         <Route path="/services" element={<PageTransition><Services /></PageTransition>} />
         <Route path="/platform" element={<PageTransition><Platform /></PageTransition>} />
         <Route path="/partners" element={<PageTransition><Partners /></PageTransition>} />
-        <Route path="/blog"     element={<PageTransition><Blog /></PageTransition>}     />
-        <Route path="/blog/:id" element={<PageTransition><BlogPost /></PageTransition>} />
+        <Route path="/blog"              element={<PageTransition><Blog /></PageTransition>}          />
+        <Route path="/blog/:id"          element={<PageTransition><BlogPost /></PageTransition>}      />
+        <Route path="/services/:slug"    element={<PageTransition><ServiceDetail /></PageTransition>} />
       </Routes>
     </AnimatePresence>
   );

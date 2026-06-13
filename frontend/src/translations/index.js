@@ -115,14 +115,28 @@ const t = {
     team: {
       label:    'The Experts',
       title:    'Meet Our Team',
-      subtitle: 'Meet the dedicated experts driving agricultural transformation across Africa',
-      roles: [
-        'Founder & Lead Strategist',
-        'Value Chain Director',
-        'Agritech Lead',
-        'Investment & Finance',
-        'Training & Capacity Building',
-        'Compliance & Operations',
+      subtitle: 'Our team brings together passionate and experienced experts combining skills in agribusiness, agronomy, quality, safety, environment, and project management.',
+      members: [
+        {
+          name: 'Landry',
+          role: 'CEO & Agribusiness Expert',
+          bio:  'Agricultural Engineer and holder of a Master\'s in Management and Business Administration in France. With over 10 years of experience, he guides the development, structuring, and success of high-impact agricultural projects.',
+        },
+        {
+          name: 'Ibrahim',
+          role: 'Quality, Safety & Environment Consultant',
+          bio:  'Holder of a Master\'s in Quality, Safety and Environment in Industries and Services obtained in France. He has over 6 years of experience supporting organisations toward operational excellence, compliance, and continuous improvement.',
+        },
+        {
+          name: 'Stéphane',
+          role: 'Agronomy Consultant',
+          bio:  'Agronomist engineer graduated from AgroSup Dijon (France). With over 6 years of experience, he brings his technical expertise to the design, optimisation, and monitoring of innovative and sustainable agricultural projects.',
+        },
+        {
+          name: 'Suzy',
+          role: 'Administrative Assistant & Project Manager',
+          bio:  'Experienced professional with over 10 years of experience in administrative management and project monitoring. She ensures the coordination, organisation, and smooth running of day-to-day operations.',
+        },
       ],
     },
 
@@ -141,6 +155,7 @@ const t = {
         { label: 'Careers',   href: '#'      },
         { label: 'Partners',  href: '#'      },
       ],
+      locations:     ['Douala — Cameroon', 'Dijon — France'],
       whatsapp:      'Message us on WhatsApp',
       copyright:     '© 2026 AgroHelp Group. All rights reserved.',
       privacyPolicy: 'Privacy Policy',
@@ -362,6 +377,57 @@ const t = {
       sendBtn:          'Send Message',
       sendingBtn:       'Sending…',
     },
+
+    temoignages: {
+      label:    'Testimonials',
+      title:    'What Our Clients Say',
+      subtitle: 'They trusted us to structure and develop their agricultural projects.',
+      items: [
+        { texte: 'When I launched my agricultural project, I didn\'t really know where to start. The AgroHelp team guided me at every step, from the idea all the way to implementation. Today, my farm is operational and profitable.', auteur: 'Jean-Marc', role: 'Farmer' },
+        { texte: 'AgroHelp\'s advice helped us improve our production methods and achieve better results. Their team listens, is always available, and knows the field realities perfectly.', auteur: 'Marie', role: 'Market Gardener' },
+        { texte: 'I particularly appreciated AgroHelp\'s professionalism and responsiveness. Thanks to their support, we were able to secure our investment and grow our business with greater confidence.', auteur: 'Aminata', role: 'Agricultural Entrepreneur' },
+        { texte: 'Working with AgroHelp was an excellent experience. You can feel a genuine desire to help farmers succeed. Their expertise and follow-up helped us take a major step forward in developing our farm.', auteur: 'Jacques', role: 'Cooperative President' },
+        { texte: 'With AgroHelp, we didn\'t feel like we were working with just a consulting firm, but with a true partner. Their support gave us confidence and helped us reach our goals faster.', auteur: 'Sophie', role: 'Agricultural Project Leader' },
+        { texte: 'As a Cameroonian from the diaspora, I wanted to invest in the agricultural sector without knowing the required steps. AgroHelp helped me connect with local producers and monitor my investment. Today, I actively contribute to job creation in my home region.', auteur: 'Diaspora Entrepreneur', role: 'Cameroonian — Diaspora' },
+      ],
+    },
+
+    enjeux: {
+      label: 'Our Context',
+      title: 'The Challenges Behind AgroHelp Group',
+      paragraphs: [
+        'The agricultural sector in Africa holds a central place in economic development dynamics, contributing significantly to employment, GDP, and food security. However, despite this important structural potential, many analyses highlight a persistent deficit in the structuring of agricultural projects, limiting their economic viability, bankability, and ability to generate lasting local added value.',
+        'In this context, agricultural project holders — entrepreneurs, cooperatives, local investors, and diaspora members — face major constraints. These include insufficient feasibility studies, fragile business models, and difficulties accessing financing and markets. For the diaspora in particular, investing in agricultural projects in Africa is often hampered by a lack of transparency, poor project structuring, and difficulties in remote monitoring, management, and operational control.',
+        'Furthermore, agricultural value chains generally remain fragmented, poorly integrated, and insufficiently optimised, which limits local value creation and sector competitiveness. This situation is aggravated by systemic factors such as climatic hazards, demographic pressure, agricultural market volatility, and growing requirements for environmental, social, and economic sustainability.',
+        'At the same time, the emergence of technological and agritech solutions offers major prospects for transforming the sector, particularly in terms of digitalisation, traceability, and farm management. However, their adoption remains limited due to a lack of strategic support, project engineering, and operational integration into existing agricultural models.',
+        'It is in this context that AgroHelp Group was created, to respond to a structural need for structuring, securing, and professionalising agricultural projects. The firm positions itself as an interface between strategy, investment, and the field, also facilitating diaspora involvement through advisory, monitoring, and remote project management services. AgroHelp Group contributes to the transformation of the agricultural sector by providing integrated expertise that converts Africa\'s agricultural potential into concrete, sustainable, and investable economic opportunities.',
+      ],
+    },
+
+    missionVisionADN: {
+      sectionLabel: 'Who We Are',
+      sectionTitle: 'Our Reason for Being',
+      cards: [
+        { label: 'Our Mission', text: 'AgroHelp Group\'s mission is to support agricultural stakeholders in the design, structuring, and development of high-performing, viable, and high-impact agricultural projects. We intervene to secure strategic decisions, reduce risks, facilitate access to financing, and accelerate project implementation.' },
+        { label: 'Our Vision',  text: 'We aim to contribute to a modern, competitive, and resilient African agriculture, capable of creating lasting value while addressing food, economic, and climate challenges.' },
+        { label: 'Our DNA',     text: 'We understand concrete agricultural realities while structuring solid, bankable projects. Our approach is focused on performance, lasting impact, and the integration of innovative solutions to address the challenges of the agricultural sector.' },
+      ],
+      positionLabel: 'Global Positioning',
+      positionText:  'We bridge the gap between strategy and the field to support high-performing, sustainable agricultural projects that generate value at every stage of their development.',
+    },
+
+    bookingSimple: {
+      label:    'Consultation',
+      title:    'Book Your Consultation',
+      subtitle: 'A simple four-step process to start your support journey.',
+      steps: [
+        { num: '01', label: 'Choose a time slot',    desc: 'Select the time that suits you best in our online calendar.' },
+        { num: '02', label: 'Describe your need',    desc: 'Briefly describe your project or the issue you need support with.' },
+        { num: '03', label: 'Talk to our experts',   desc: 'An AgroHelp expert will contact you for a personalised discussion and advice tailored to your situation.' },
+        { num: '04', label: 'Calendly',              desc: 'Book your consultation directly through our Calendly platform, simple and secure.' },
+      ],
+      btnLabel: 'Book on Calendly',
+    },
   },
 
   // ══════════════════════════════════════════════════════════════════
@@ -421,12 +487,12 @@ const t = {
       subtitle:  'Cliquez sur chaque service pour découvrir son contenu en détail.',
       learnMore: 'En savoir plus',
       items: [
-        { title: 'Conseil stratégique & agribusiness',              description: "Accompagnement stratégique pour structurer, développer et financer vos projets agricoles.",                                            tag: 'Stratégie'   },
-        { title: 'Développement des filières agricoles',            description: "Construction de filières agricoles efficaces et rentables, des intrants jusqu'aux marchés finaux.",                                     tag: 'Filières'    },
-        { title: 'Commercialisation des intrants agricoles',        description: "Approvisionnement et distribution de qualité en semences, engrais et équipements agricoles.",                                           tag: 'Intrants'    },
-        { title: 'Innovation & agritech',                           description: "Intégration des solutions technologiques pour moderniser et optimiser vos opérations agricoles.",                                        tag: 'Technologie' },
-        { title: 'Formation & renforcement de capacités',           description: "Programmes de formation complets pour les agriculteurs et tous les acteurs de la chaîne de valeur.",                                    tag: 'Formation'   },
-        { title: 'QHSE – Qualité, Hygiène, Sécurité & Environnement', description: "Accompagnement vers la conformité aux normes internationales de qualité, hygiène, sécurité et environnement.", tag: 'QHSE'        },
+        { title: 'Conseil stratégique & agribusiness',                    description: "Accompagner la réussite et la croissance de vos projets agricoles",               tag: 'Stratégie'   },
+        { title: 'Développement des filières agricoles',                  description: "Structurer les chaînes de valeur pour créer plus d'impact et de valeur",          tag: 'Filières'    },
+        { title: "Commercialisation d'Intrants Agricoles",                description: "Faciliter l'accès à des solutions agricoles performantes et adaptées",            tag: 'Intrants'    },
+        { title: 'Innovation & Agritech',                                 description: "Accélérer la transformation digitale du secteur agricole",                        tag: 'Technologie' },
+        { title: 'Formation, Coaching & Renforcement des Capacités',      description: "Développer les compétences pour accélérer la performance et l'innovation",       tag: 'Formation'   },
+        { title: 'QHSE - Qualité, Hygiène, Sécurité & Environnement',    description: "Renforcer la performance, la conformité et la maîtrise des risques",              tag: 'QHSE'        },
       ],
     },
 
@@ -483,7 +549,7 @@ const t = {
       subtitle: "Notre équipe réunit des experts passionnés et expérimentés, combinant des compétences en agribusiness, agronomie, qualité, sécurité, environnement et gestion de projets. Grâce à des parcours académiques reconnus en France et à une solide expérience de terrain, nous accompagnons nos clients avec rigueur, innovation et engagement vers des résultats durables.",
       members: [
         {
-          name: 'Landry Eric',
+          name: 'Landry',
           role: 'CEO & Expert en Agribusiness',
           bio:  "Ingénieur en Agribusiness et titulaire d'un Master en Management et Administration des Entreprises en France. Fort de plus de 10 ans d'expérience, il accompagne le développement, la structuration et la réussite de projets agricoles à fort impact.",
         },
@@ -515,9 +581,9 @@ const t = {
       serviceLinks: [
         'Conseil stratégique & agribusiness',
         'Développement des filières agricoles',
-        'Innovation & agritech',
-        'Formation & renforcement de capacités',
-        'QHSE – Qualité, Hygiène, Sécurité & Environnement',
+        'Innovation & Agritech',
+        'Formation, Coaching & Renforcement des Capacités',
+        'QHSE - Qualité, Hygiène, Sécurité & Environnement',
       ],
       companyLinks: [
         { label: 'Accueil',        href: '/'         },
@@ -576,40 +642,40 @@ const t = {
       startService:   'Démarrer Ce Service',
       services: [
         {
-          tag: 'Stratégie', title: 'Conseil Stratégique',
-          shortDesc: "Des stratégies sur mesure pour votre entreprise agricole — de l'analyse de marché à la mise en œuvre complète.",
-          fullDesc:  "Notre service de conseil stratégique fournit un accompagnement de bout en bout pour les entreprises agricoles à chaque étape. Nous effectuons des analyses de marché rigoureuses, des benchmarks concurrentiels et des études de faisabilité pour développer des feuilles de route exploitables. Que vous lanciez une nouvelle agro-entreprise, développiez une opération existante ou pénétriez de nouveaux marchés, nos consultants livrent des stratégies basées sur des données créant un impact mesurable.",
-          highlights: ['Analyse de Marché & Faisabilité', 'Conception du Modèle Commercial', 'Préparation aux Investissements', 'Stratégie Go-to-Market'],
+          tag: 'Stratégie', title: 'Conseil stratégique & agribusiness',
+          shortDesc: "Accompagner la réussite et la croissance de vos projets agricoles",
+          fullDesc:  "Chaque projet agricole nécessite une vision claire, une stratégie adaptée et une structuration rigoureuse pour garantir sa viabilité. AgroHelp Group intervient dès les premières phases du projet afin d'évaluer son potentiel technique, économique et commercial. Nous accompagnons les entrepreneurs, exploitants agricoles, coopératives, investisseurs et organisations dans la conception, le développement et la consolidation de leurs projets. Notre expertise permet de construire des modèles économiques robustes, d'identifier les opportunités de marché et de définir des stratégies de croissance durables.",
+          highlights: ['Études de faisabilité agricoles', 'Business plans et modélisation financière', 'Études de marché', 'Structuration de projets', 'Analyse de rentabilité', 'Stratégies de développement'],
         },
         {
-          tag: 'Croissance', title: 'Développement de la Chaîne de Valeur',
-          shortDesc: 'Construire des chaînes de valeur efficaces et rentables qui connectent directement les agriculteurs aux marchés.',
-          fullDesc:  "Nous concevons et renforçons les chaînes de valeur agricoles des intrants agricoles jusqu'aux marchés consommateurs finals. Notre approche identifie les goulots d'étranglement, cartographie tous les acteurs et liens, et met en œuvre des interventions qui améliorent l'efficacité, réduisent les pertes post-récolte et augmentent les marges pour chaque participant.",
-          highlights: ['Cartographie de la Chaîne de Valeur', 'Facilitation des Liens', 'Gestion Post-Récolte', "Programmes d'Accès au Marché"],
+          tag: 'Filières', title: 'Développement des filières agricoles',
+          shortDesc: "Structurer les chaînes de valeur pour créer plus d'impact et de valeur",
+          fullDesc:  "Les filières agricoles africaines disposent d'un fort potentiel de croissance, mais restent souvent fragmentées et insuffisamment structurées. AgroHelp Group accompagne les organisations agricoles, coopératives, interprofessions, entreprises et institutions dans la mise en œuvre de stratégies visant à renforcer la compétitivité, la coordination des acteurs et la création de valeur au sein des filières. Notre approche favorise le développement d'écosystèmes agricoles performants, la transformation locale des productions et l'accès à des marchés durables et rémunérateurs.",
+          highlights: ['Structuration de filières agricoles et agroalimentaires', 'Organisation et coordination des acteurs', 'Développement territorial et économique', 'Optimisation des chaînes de valeur', 'Transformation agroalimentaire', 'Accès aux marchés et développement commercial'],
         },
         {
-          tag: 'Approvisionnement', title: 'Approvisionnement en Intrants',
-          shortDesc: "Approvisionnement et distribution fiables d'intrants agricoles de qualité aux petits exploitants et agro-entreprises.",
-          fullDesc:  "Notre service garantit que les agriculteurs et les agro-entreprises ont un accès fiable et abordable à des semences, engrais, produits phytosanitaires et équipements de qualité. Nous exploitons notre réseau panafricain pour s'approvisionner en intrants certifiés, négocier des prix en gros et gérer la logistique jusqu'à la livraison au dernier kilomètre — réduisant les coûts d'intrants jusqu'à 30%.",
-          highlights: ['Approvisionnement en Semences Certifiées', "Achat d'Engrais", "Location d'Équipements", 'Logistique du Dernier Kilomètre'],
+          tag: 'Intrants', title: "Commercialisation d'Intrants Agricoles",
+          shortDesc: "Faciliter l'accès à des solutions agricoles performantes et adaptées",
+          fullDesc:  "L'accès à des intrants agricoles de qualité constitue un levier essentiel pour améliorer les rendements, la productivité et la résilience des exploitations agricoles. AgroHelp Group accompagne les producteurs, coopératives, organisations agricoles et entreprises dans l'identification et l'acquisition de solutions adaptées à leurs besoins. Grâce à un réseau de partenaires techniques et commerciaux, nous facilitons l'accès à des intrants performants, innovants et conformes aux exigences du secteur agricole, tout en apportant un accompagnement personnalisé pour leur utilisation optimale.",
+          highlights: ['Mise en relation avec des fournisseurs et partenaires de confiance', 'Commercialisation d\'intrants agricoles', 'Conseil sur les solutions techniques adaptées aux besoins des exploitations', 'Accompagnement des coopératives et organisations agricoles', 'Distribution de produits agricoles stratégiques', 'Appui à la modernisation des exploitations agricoles'],
         },
         {
-          tag: 'Technologie', title: 'Solutions Agritech',
-          shortDesc: 'Exploiter la technologie pour moderniser les opérations agricoles et améliorer substantiellement les rendements.',
-          fullDesc:  "Nous intégrons des technologies agricoles de pointe dans les opérations agricoles et les flux de travail des agro-entreprises. De la télédétection et de l'agriculture de précision aux logiciels de gestion agricole et aux réseaux de capteurs IoT, nos implémentations fournissent des données en temps réel qui aident les agriculteurs à prendre des décisions plus intelligentes et à augmenter les rendements en moyenne de 25%.",
-          highlights: ['Agriculture de Précision', 'Logiciel de Gestion Agricole', 'Télédétection & Drones', 'Réseaux de Capteurs IoT'],
+          tag: 'Technologie', title: 'Innovation & Agritech',
+          shortDesc: "Accélérer la transformation digitale du secteur agricole",
+          fullDesc:  "L'innovation constitue aujourd'hui un levier stratégique majeur pour améliorer la performance, la compétitivité et la durabilité des activités agricoles. AgroHelp Group accompagne les exploitations agricoles, coopératives, entreprises agroalimentaires et organisations de développement dans l'intégration de solutions numériques adaptées aux réalités du terrain. Nous mobilisons les outils digitaux pour faciliter la collecte et l'analyse des données, optimiser le pilotage des activités agricoles et renforcer la prise de décision. Notre objectif est d'aider les acteurs du secteur à gagner en efficacité opérationnelle, en traçabilité et en résilience.",
+          highlights: ['Agriculture digitale et agriculture de précision', 'Digitalisation des exploitations agricoles', "Développement et déploiement d'outils de collecte de données", "Solutions de suivi, d'analyse et de pilotage des activités", 'Plateformes numériques agricoles', "Systèmes de traçabilité et de gestion de l'information"],
         },
         {
-          tag: 'Formation', title: 'Formation & Renforcement des Capacités',
-          shortDesc: 'Des programmes de formation complets pour les agriculteurs et tous les acteurs de la chaîne de valeur.',
-          fullDesc:  "La connaissance est l'intrant agricole le plus durable. Nos programmes de formation couvrent les Bonnes Pratiques Agricoles (BPA), l'éducation financière, la gestion coopérative, la sécurité alimentaire et la manutention post-récolte. Nous dispensons la formation à travers des écoles de terrain, des modules en ligne et des programmes de formation de formateurs — équipant plus de 5 000 professionnels chaque année.",
-          highlights: ['Bonnes Pratiques Agricoles', 'Éducation Financière', 'Gestion Coopérative', 'Formation de Formateurs'],
+          tag: 'Formation', title: 'Formation, Coaching & Renforcement des Capacités',
+          shortDesc: "Développer les compétences pour accélérer la performance et l'innovation",
+          fullDesc:  "Le développement durable du secteur agricole repose avant tout sur le renforcement des compétences humaines et organisationnelles. AgroHelp Group accompagne les producteurs, entrepreneurs agricoles, coopératives, organisations professionnelles, entreprises et institutions à travers des dispositifs de formation et d'accompagnement adaptés à leurs besoins. Grâce à une approche pratique et participative, nous contribuons au développement des compétences techniques, entrepreneuriales et managériales nécessaires à la réussite des projets agricoles et agroalimentaires.",
+          highlights: ['Formations techniques agricoles et agroalimentaires', 'Coaching entrepreneurial', 'Renforcement des capacités organisationnelles et managériales', "Animation d'ateliers, séminaires et sessions de sensibilisation", "Accompagnement à l'innovation et à la transformation des organisations", 'Appui à la conception et au développement de projets'],
         },
         {
-          tag: 'Normes', title: 'Conformité QHSE',
-          shortDesc: "Garantir les normes de qualité, de santé, de sécurité et d'environnement dans toutes vos opérations.",
-          fullDesc:  "Nous aidons les entreprises agricoles à atteindre et maintenir la conformité aux normes internationales QHSE — notamment GlobalG.A.P., ISO 22000, HACCP et les exigences des marchés d'exportation. Nos feuilles de route de conformité rationalisent les processus de certification, réduisent les risques d'audit et ouvrent les portes aux marchés premium.",
-          highlights: ['Certification GlobalG.A.P.', 'ISO 22000 & HACCP', 'Conformité Environnementale', "Normes des Marchés d'Exportation"],
+          tag: 'QHSE', title: 'QHSE - Qualité, Hygiène, Sécurité & Environnement',
+          shortDesc: "Renforcer la performance, la conformité et la maîtrise des risques",
+          fullDesc:  "Les enjeux liés à la qualité, à la sécurité, à l'hygiène et à l'environnement sont aujourd'hui au cœur de la compétitivité et de la durabilité des organisations agricoles et agroalimentaires. AgroHelp Group accompagne les entreprises, coopératives, organisations professionnelles et unités de transformation dans la mise en place de systèmes QHSE performants et adaptés à leurs activités. Notre approche vise à améliorer la qualité des opérations, sécuriser les processus, protéger les collaborateurs et garantir la conformité aux exigences réglementaires et aux standards du secteur.",
+          highlights: ['Mise en place de démarches QHSE', 'Gestion et prévention des risques opérationnels', 'Sensibilisation et formation QHSE', 'Hygiène et sécurité alimentaire', "Élaboration et mise en œuvre de procédures qualité", "Accompagnement à la conformité réglementaire", 'Amélioration continue des processus et des performances'],
         },
         {
           tag: 'Élevage', title: 'Production Animale',
@@ -746,6 +812,57 @@ const t = {
       messagePh:       'Parlez-nous de votre projet, question ou comment nous pouvons vous aider…',
       sendBtn:         'Envoyer le Message',
       sendingBtn:      'Envoi en cours…',
+    },
+
+    temoignages: {
+      label:    'Témoignages',
+      title:    'Ce que disent nos clients',
+      subtitle: 'Ils nous ont fait confiance pour structurer et développer leurs projets agricoles.',
+      items: [
+        { texte: "Quand j'ai lancé mon projet agricole, je ne savais pas vraiment par où commencer. L'équipe d'AgrOhelp m'a accompagné à chaque étape, de l'idée jusqu'à la mise en œuvre. Aujourd'hui, mon exploitation est opérationnelle et rentable.", auteur: 'Jean-Marc', role: 'Agriculteur' },
+        { texte: "Les conseils d'AgrOhelp nous ont permis d'améliorer nos méthodes de production et d'obtenir de meilleurs résultats. Leur équipe est à l'écoute, disponible et connaît parfaitement les réalités du terrain.", auteur: 'Marie', role: 'Productrice maraîchère' },
+        { texte: "J'ai particulièrement apprécié le professionnalisme et la réactivité d'AgrOhelp. Grâce à leur accompagnement, nous avons pu sécuriser notre investissement et développer notre activité avec plus de sérénité.", auteur: 'Aminata', role: 'Entrepreneure agricole' },
+        { texte: "Travailler avec AgrOhelp a été une excellente expérience. On sent une vraie volonté d'aider les agriculteurs à réussir. Leur expertise et leur suivi nous ont permis de franchir un cap important dans le développement de notre exploitation.", auteur: 'Jacques', role: 'Président de coopérative' },
+        { texte: "Avec AgrOhelp, nous n'avons pas eu l'impression de travailler avec un simple cabinet de conseil, mais avec un véritable partenaire. Leur accompagnement nous a donné confiance et nous a aidés à atteindre nos objectifs plus rapidement.", auteur: 'Sophie', role: 'Porteuse de projet agricole' },
+        { texte: "En tant que Camerounais de la diaspora, je souhaitais investir dans le secteur agricole sans connaître les démarches nécessaires. AgroHelp m'a accompagné dans la mise en relation avec des producteurs locaux et dans le suivi de mon investissement. Aujourd'hui, je participe activement à la création d'emplois dans ma région d'origine.", auteur: "Entrepreneur de la diaspora", role: 'Camerounais — Diaspora' },
+      ],
+    },
+
+    enjeux: {
+      label: 'Notre Contexte',
+      title: "Les enjeux à l'origine d'AgroHelp Group",
+      paragraphs: [
+        "Le secteur agricole en Afrique occupe une place centrale dans les dynamiques de développement économique, en contribuant significativement à l'emploi, au PIB et à la sécurité alimentaire. Toutefois, malgré ce potentiel structurel important, de nombreuses analyses mettent en évidence un déficit persistant de structuration des projets agricoles, limitant leur viabilité économique, leur bancabilité et leur capacité à générer une valeur ajoutée locale durable.",
+        "Dans ce contexte, les porteurs de projets agricoles — entrepreneurs, coopératives, investisseurs locaux et membres de la diaspora — font face à des contraintes majeures. Celles-ci incluent notamment l'insuffisance d'études de faisabilité robustes, la fragilité des modèles économiques, ainsi que des difficultés d'accès aux financements et aux marchés. Pour la diaspora en particulier, l'investissement dans les projets agricoles en Afrique est souvent freiné par un manque de transparence, une faible structuration des projets, ainsi que des difficultés de suivi, de pilotage et de contrôle opérationnel à distance.",
+        "Par ailleurs, les chaînes de valeur agricoles restent généralement fragmentées, peu intégrées et insuffisamment optimisées, ce qui limite la création de valeur locale et la compétitivité des filières. Cette situation est aggravée par des facteurs systémiques tels que les aléas climatiques, la pression démographique, la volatilité des marchés agricoles et les exigences croissantes en matière de durabilité environnementale, sociale et économique.",
+        "En parallèle, l'émergence de solutions technologiques et agritech offre des perspectives majeures de transformation du secteur, notamment en matière de digitalisation, de traçabilité et de pilotage des exploitations. Toutefois, leur adoption reste encore limitée en raison d'un manque d'accompagnement stratégique, d'ingénierie de projet et d'intégration opérationnelle dans les modèles agricoles existants.",
+        "C'est dans ce contexte qu'AgroHelp Group a été créé, afin de répondre à un besoin structurel de structuration, de sécurisation et de professionnalisation des projets agricoles. Le cabinet se positionne comme un acteur d'interface entre la stratégie, l'investissement et le terrain, en facilitant également l'implication de la diaspora grâce à des dispositifs d'accompagnement, de suivi et de pilotage des projets à distance. Ainsi, AgroHelp Group contribue à la transformation du secteur agricole en apportant une expertise intégrée combinant analyse stratégique, ingénierie de projet et accompagnement opérationnel, afin de convertir le potentiel agricole africain en opportunités économiques concrètes, durables et investissables.",
+      ],
+    },
+
+    missionVisionADN: {
+      sectionLabel: 'Qui Nous Sommes',
+      sectionTitle: "Notre Raison d'Être",
+      cards: [
+        { label: 'Notre Mission', text: "AgroHelp Group a pour mission d'accompagner les acteurs de l'agriculture dans la conception, la structuration et le développement de projets agricoles performants, viables et à fort impact. Nous intervenons pour sécuriser les décisions stratégiques, réduire les risques, faciliter l'accès au financement et accélérer la mise en œuvre des projets." },
+        { label: 'Notre Vision',  text: "Nous ambitionnons de contribuer à une agriculture africaine moderne, compétitive et résiliente, capable de créer de la valeur durable tout en répondant aux enjeux alimentaires, économiques et climatiques." },
+        { label: 'Notre ADN',     text: "Nous comprenons les réalités agricoles concrètes tout en structurant des projets solides et bancables. Notre démarche est orientée performance, impact durable et intégration des solutions innovantes pour répondre aux défis du secteur agricole." },
+      ],
+      positionLabel: 'Positionnement Global',
+      positionText:  "Nous faisons le lien entre la stratégie et le terrain pour accompagner des projets agricoles performants, durables et générateurs de valeur à chaque étape de leur développement.",
+    },
+
+    bookingSimple: {
+      label:    'Consultation',
+      title:    'Réservez votre consultation',
+      subtitle: 'Un processus simple en quatre étapes pour démarrer votre accompagnement.',
+      steps: [
+        { num: '01', label: 'Choisissez un créneau',     desc: 'Sélectionnez le moment qui vous convient le mieux dans notre calendrier en ligne.' },
+        { num: '02', label: 'Présentez votre besoin',    desc: 'Décrivez brièvement votre projet ou la problématique sur laquelle vous souhaitez être accompagné.' },
+        { num: '03', label: 'Échangez avec nos experts', desc: 'Un expert AgroHelp vous contacte pour un échange personnalisé et des conseils adaptés à votre situation.' },
+        { num: '04', label: 'Calendly',                  desc: 'Réservez directement votre consultation via notre plateforme Calendly, simple et sécurisée.' },
+      ],
+      btnLabel: 'Réserver sur Calendly',
     },
   },
 };

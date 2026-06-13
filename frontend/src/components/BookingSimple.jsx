@@ -1,16 +1,15 @@
 import { motion } from 'framer-motion';
 import { CalendarCheck, MessageSquare, Users, Calendar } from 'lucide-react';
+import { useLanguage } from '../context/LanguageContext';
+import translations from '../translations';
 
 const vp = { once: true, amount: 0.1 };
-
-const steps = [
-  { icon: CalendarCheck, num: '01', label: 'Choisissez un créneau',    desc: 'Sélectionnez le moment qui vous convient le mieux dans notre calendrier en ligne.' },
-  { icon: MessageSquare,  num: '02', label: 'Présentez votre besoin',   desc: 'Décrivez brièvement votre projet ou la problématique sur laquelle vous souhaitez être accompagné.' },
-  { icon: Users,          num: '03', label: 'Échangez avec nos experts', desc: 'Un expert AgroHelp vous contacte pour un échange personnalisé et des conseils adaptés à votre situation.' },
-  { icon: Calendar,       num: '04', label: 'Calendly',                  desc: 'Réservez directement votre consultation via notre plateforme Calendly, simple et sécurisée.' },
-];
+const stepIcons = [CalendarCheck, MessageSquare, Users, Calendar];
 
 export default function BookingSimple() {
+  const { language } = useLanguage();
+  const tx = translations[language].bookingSimple;
+
   return (
     <section id="booking" className="py-16 md:py-24 bg-white">
       <div className="container-custom">
@@ -22,14 +21,14 @@ export default function BookingSimple() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <span className="section-label">Consultation</span>
-          <h2 className="section-title">Réservez votre consultation</h2>
-          <p className="section-subtitle">Un processus simple en quatre étapes pour démarrer votre accompagnement.</p>
+          <span className="section-label">{tx.label}</span>
+          <h2 className="section-title">{tx.title}</h2>
+          <p className="section-subtitle">{tx.subtitle}</p>
         </motion.div>
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-14">
-          {steps.map((step, i) => {
-            const Icon = step.icon;
+          {tx.steps.map((step, i) => {
+            const Icon = stepIcons[i];
             return (
               <motion.div
                 key={i}
@@ -67,7 +66,7 @@ export default function BookingSimple() {
             className="btn-orange inline-flex items-center gap-3 text-lg px-10 py-4"
           >
             <Calendar size={22} />
-            Réserver sur Calendly
+            {tx.btnLabel}
           </button>
         </motion.div>
       </div>

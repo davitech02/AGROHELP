@@ -10,12 +10,12 @@ import svc5 from '../assets/service5.jpg';
 import svc6 from '../assets/service6.jpg';
 
 const servicesMeta = [
-  { image: svc1,                                                                                        tagColor: 'bg-deep-green'    },
-  { image: svc2,                                                                                        tagColor: 'bg-forest-green'  },
-  { image: 'https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=520&h=380&fit=crop&q=80', tagColor: 'bg-orange-accent' },
-  { image: svc4,                                                                                        tagColor: 'bg-deep-green'    },
-  { image: svc5,                                                                                        tagColor: 'bg-forest-green'  },
-  { image: svc6,                                                                                        tagColor: 'bg-orange-accent' },
+  { image: svc1,                                                                                        tagColor: 'bg-deep-green',   slug: 'conseil-strategique' },
+  { image: svc2,                                                                                        tagColor: 'bg-forest-green', slug: 'filieres-agricoles'  },
+  { image: 'https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=520&h=380&fit=crop&q=80', tagColor: 'bg-orange-accent', slug: 'intrants-agricoles'  },
+  { image: svc4,                                                                                        tagColor: 'bg-deep-green',   slug: 'innovation-agritech' },
+  { image: svc5,                                                                                        tagColor: 'bg-forest-green', slug: 'formation-coaching'  },
+  { image: svc6,                                                                                        tagColor: 'bg-orange-accent', slug: 'qhse'               },
 ];
 
 const containerVariants = {
@@ -56,7 +56,7 @@ export default function Services() {
           {tx.items.map((svc, i) => (
             <motion.div key={i} variants={itemVariants}>
               <Link
-                to="/services"
+                to={`/services/${servicesMeta[i].slug}`}
                 className="group card-base cursor-pointer block hover:shadow-card-hover transition-all duration-300"
               >
                 <div className="relative h-52 overflow-hidden">

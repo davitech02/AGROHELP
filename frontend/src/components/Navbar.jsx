@@ -11,7 +11,7 @@ export default function Navbar() {
   const scrolled = useScrolledNavbar();
   const location = useLocation();
   const navigate = useNavigate();
-  const { language } = useLanguage();
+  const { language, setLanguage } = useLanguage();
   const tx = t[language].nav;
 
   function handleNavClick(link, e) {
@@ -92,6 +92,26 @@ export default function Navbar() {
         >
           {tx.cta}
         </Link>
+
+        {/* Language switcher */}
+        <div className="shrink-0 flex items-center rounded-full p-0.5" style={{ backgroundColor: 'rgba(255,255,255,0.12)' }}>
+          {['FR', 'EN'].map((lang) => {
+            const active = language === lang.toLowerCase();
+            return (
+              <button
+                key={lang}
+                onClick={() => setLanguage(lang.toLowerCase())}
+                className="px-3 py-1.5 rounded-full text-xs font-bold transition-all duration-200"
+                style={{
+                  backgroundColor: active ? '#ffffff' : 'transparent',
+                  color: active ? '#1B4332' : 'rgba(255,255,255,0.65)',
+                }}
+              >
+                {lang}
+              </button>
+            );
+          })}
+        </div>
       </div>
 
       {/* ── Mobile header ────────────────────────────── */}
@@ -131,7 +151,7 @@ export default function Navbar() {
                 </Link>
               );
             })}
-            <div className="mt-3 px-1">
+            <div className="mt-3 px-1 flex flex-col gap-3">
               <Link
                 to="/contact"
                 onClick={() => setIsOpen(false)}
@@ -140,6 +160,24 @@ export default function Navbar() {
               >
                 {tx.cta}
               </Link>
+              <div className="flex items-center justify-center rounded-full p-0.5 self-start" style={{ backgroundColor: 'rgba(255,255,255,0.12)' }}>
+                {['FR', 'EN'].map((lang) => {
+                  const active = language === lang.toLowerCase();
+                  return (
+                    <button
+                      key={lang}
+                      onClick={() => setLanguage(lang.toLowerCase())}
+                      className="px-4 py-1.5 rounded-full text-sm font-bold transition-all duration-200"
+                      style={{
+                        backgroundColor: active ? '#ffffff' : 'transparent',
+                        color: active ? '#1B4332' : 'rgba(255,255,255,0.65)',
+                      }}
+                    >
+                      {lang}
+                    </button>
+                  );
+                })}
+              </div>
             </div>
           </div>
         </div>
